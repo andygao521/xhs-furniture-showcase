@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏠 罗尔的家具商家阵容 · 买手选品参考</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#faf8f5;font-family:'PingFang SC','Microsoft YaHei',sans-serif;color:#2d1b0e}
+/* Hero */
+.hero{background:linear-gradient(135deg,#3d2314 0%,#6b3a22 60%,#8b5e3c 100%);padding:48px 24px 40px;text-align:center;color:#fff}
+.hero h1{font-size:2rem;font-weight:700;letter-spacing:2px;margin-bottom:8px}
+.hero p{font-size:1rem;opacity:.85;margin-bottom:28px}
+.stats{display:flex;justify-content:center;gap:48px}
+.stat{text-align:center}
+.stat-num{font-size:2rem;font-weight:700;display:block}
+.stat-label{font-size:.8rem;opacity:.7;margin-top:2px}
+/* Filter */
+.filter-wrap{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e8ddd4;padding:12px 24px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.filter-btn{padding:7px 18px;border-radius:20px;border:2px solid #c9b8a8;background:#fff;color:#5c4a3a;font-size:.85rem;cursor:pointer;transition:.2s;font-weight:500}
+.filter-btn:hover{border-color:#6b3a22;color:#6b3a22}
+.filter-btn.active{background:#6b3a22;border-color:#6b3a22;color:#fff}
+/* Grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1280px;margin:32px auto;padding:0 24px}
+@media(max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.grid{grid-template-columns:1fr;padding:0 16px}}
+/* Card */
+.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);transition:.25s;border:1px solid #f0e8e0}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.13)}
+.card.hidden{display:none}
+.card-top{padding:18px 20px 0}
+.tag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:.72rem;font-weight:600;color:#fff;margin-bottom:10px}
+.tag-da{background:#5c3d2e}.tag-xin{background:#8b5e3c}.tag-sd{background:#4a6741}.tag-int{background:#2c5282}
+.brand-name{font-size:1.25rem;font-weight:700;color:#2d1b0e;margin-bottom:3px}
+.shop-name{font-size:.82rem;color:#9e8878;margin-bottom:10px}
+.intro{font-size:.84rem;line-height:1.65;color:#5c4a3a;padding-bottom:14px;border-bottom:1px solid #f0e8e0}
+/* Products */
+.products-title{font-size:.78rem;color:#9e8878;font-weight:600;padding:12px 20px 8px;letter-spacing:1px;text-transform:uppercase}
+.products-scroll{display:flex;gap:10px;overflow-x:auto;padding:0 20px 14px;scrollbar-width:thin;scrollbar-color:#d4c4b8 transparent}
+.products-scroll::-webkit-scrollbar{height:4px}
+.products-scroll::-webkit-scrollbar-thumb{background:#d4c4b8;border-radius:2px}
+.prod-card{flex:0 0 130px;background:#faf8f5;border-radius:10px;padding:12px 10px;border:1px solid #ede4da;cursor:default}
+.prod-icon{width:44px;height:44px;margin:0 auto 8px;display:block}
+.prod-img{width:100%;height:90px;object-fit:cover;border-radius:6px;margin-bottom:8px;background:#f0ebe4}
+.prod-cat{font-size:.68rem;color:#8b5e3c;font-weight:600;margin-bottom:4px;text-align:center}
+.prod-name{font-size:.78rem;color:#2d1b0e;font-weight:600;margin-bottom:4px;line-height:1.3;text-align:center;min-height:32px}
+.prod-price{font-size:.78rem;color:#c0392b;font-weight:700;text-align:center;margin-bottom:3px}
+.prod-tip{font-size:.68rem;color:#9e8878;text-align:center;line-height:1.3}
+/* Buyers */
+.buyers-wrap{padding:0 20px 14px;border-top:1px solid #f0e8e0;margin-top:4px}
+.buyers-title{font-size:.78rem;color:#9e8878;font-weight:600;padding:10px 0 6px;letter-spacing:1px}
+.buyers-list{display:flex;flex-wrap:wrap;gap:6px}
+.buyer-tag{background:#fdf3ec;border:1px solid #e8c9aa;color:#8b5e3c;font-size:.75rem;padding:3px 10px;border-radius:12px;font-weight:500}
+.no-buyer{font-size:.78rem;color:#c4b5a8;font-style:italic}
+/* Buttons */
+.card-btns{display:flex;gap:10px;padding:14px 20px 18px;border-top:1px solid #f0e8e0}
+.btn{flex:1;text-align:center;padding:8px 0;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;transition:.2s;border:2px solid #6b3a22;color:#6b3a22}
+.btn:hover{background:#6b3a22;color:#fff}
+.btn-solid{background:#6b3a22;color:#fff}.btn-solid:hover{background:#4a2710}
+/* Footer */
+footer{text-align:center;padding:32px 24px;color:#b0a09a;font-size:.78rem;line-height:1.8;border-top:1px solid #e8ddd4;margin-top:16px}
+/* SVG icons */
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🏠 罗尔的家具商家阵容</h1>
+  <p>买手选品参考手册 · 小红书家居行业七组</p>
+  <div class="stats">
+    <div class="stat"><span class="stat-num">18</span><span class="stat-label">在库商家</span></div>
+    <div class="stat"><span class="stat-num">4</span><span class="stat-label">品牌分类</span></div>
+    <div class="stat"><span class="stat-num">90+</span><span class="stat-label">精选货品</span></div>
+  </div>
+</div>
+
+<div class="filter-wrap">
+  <button class="filter-btn active" data-filter="all">全部 (18)</button>
+  <button class="filter-btn" data-filter="行业大牌">行业大牌 (8)</button>
+  <button class="filter-btn" data-filter="新锐设计品牌">新锐设计品牌 (7)</button>
+  <button class="filter-btn" data-filter="山东实木重点品牌">山东实木重点品牌 (4)</button>
+  <button class="filter-btn" data-filter="国际品牌">国际品牌 (2)</button>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<footer>
+  罗尔 · 小红书家居行业七组 · 家具品牌买手参考手册 · 2025<br>
+  历史合作买手数据来源：小红书BK买手带货全链路数据 · 近12个月统计
+</footer>
+
+<script>
+// SVG icons
+const icons = {
+  sofa: `<rect x="4" y="18" width="36" height="14" rx="4" fill="#d4c4b8"/><rect x="8" y="22" width="28" height="8" rx="2" fill="#e8ddd4"/><rect x="2" y="16" width="8" height="16" rx="3" fill="#c9b8a8"/><rect x="34" y="16" width="8" height="16" rx="3" fill="#c9b8a8"/><rect x="10" y="32" width="4" height="5" rx="1" fill="#b0a09a"/><rect x="30" y="32" width="4" height="5" rx="1" fill="#b0a09a"/>`,
+  table: `<rect x="4" y="14" width="36" height="6" rx="2" fill="#c9b8a8"/><rect x="10" y="20" width="4" height="14" rx="1" fill="#b0a09a"/><rect x="30" y="20" width="4" height="14" rx="1" fill="#b0a09a"/><rect x="6" y="16" width="32" height="3" rx="1" fill="#d4c4b8"/>`,
+  bed: `<rect x="4" y="22" width="36" height="12" rx="2" fill="#d4c4b8"/><rect x="4" y="14" width="10" height="10" rx="2" fill="#c9b8a8"/><rect x="14" y="18" width="26" height="8" rx="2" fill="#e8ddd4"/><rect x="6" y="34" width="4" height="4" rx="1" fill="#b0a09a"/><rect x="34" y="34" width="4" height="4" rx="1" fill="#b0a09a"/>`,
+  desk: `<rect x="4" y="16" width="36" height="5" rx="2" fill="#c9b8a8"/><rect x="6" y="21" width="4" height="14" rx="1" fill="#b0a09a"/><rect x="34" y="21" width="4" height="14" rx="1" fill="#b0a09a"/><rect x="28" y="10" width="10" height="8" rx="2" fill="#d4c4b8"/>`,
+  shelf: `<rect x="6" y="6" width="4" height="32" rx="1" fill="#b0a09a"/><rect x="34" y="6" width="4" height="32" rx="1" fill="#b0a09a"/><rect x="6" y="14" width="32" height="3" rx="1" fill="#c9b8a8"/><rect x="6" y="24" width="32" height="3" rx="1" fill="#c9b8a8"/>`,
+  tea: `<rect x="6" y="18" width="28" height="14" rx="2" fill="#c9b8a8"/><rect x="8" y="20" width="24" height="10" rx="1" fill="#d4c4b8"/><ellipse cx="36" cy="22" rx="5" ry="3" fill="#b0a09a"/><rect x="10" y="32" width="4" height="4" rx="1" fill="#b0a09a"/><rect x="26" y="32" width="4" height="4" rx="1" fill="#b0a09a"/>`,
+  kid: `<rect x="6" y="16" width="32" height="18" rx="3" fill="#d4c4b8"/><rect x="8" y="10" width="14" height="8" rx="2" fill="#e8ddd4"/><rect x="6" y="34" width="4" height="4" rx="1" fill="#b0a09a"/><rect x="34" y="34" width="4" height="4" rx="1" fill="#b0a09a"/><circle cx="32" cy="20" r="4" fill="#f0e8e0"/>`,
+  chair: `<rect x="10" y="6" width="24" height="18" rx="4" fill="#d4c4b8"/><rect x="8" y="22" width="28" height="5" rx="2" fill="#c9b8a8"/><rect x="10" y="27" width="4" height="10" rx="1" fill="#b0a09a"/><rect x="30" y="27" width="4" height="10" rx="1" fill="#b0a09a"/>`,
+  storage: `<rect x="6" y="10" width="32" height="26" rx="3" fill="#d4c4b8"/><rect x="8" y="12" width="28" height="10" rx="2" fill="#e8ddd4"/><rect x="8" y="24" width="28" height="10" rx="2" fill="#e8ddd4"/><circle cx="22" cy="17" r="2" fill="#b0a09a"/><circle cx="22" cy="29" r="2" fill="#b0a09a"/>`,
+};
+
+const merchants = [
+  {tag:"新锐设计品牌",brand:"舒梵sufan",name:"舒梵旗舰店",
+   intro:"多次斩获红点设计奖的原创设计家具品牌，以「北欧极简+东方含蓄」为设计语言，实木框架搭配手工布艺，每件作品兼顾视觉美学与日常舒适。主营客厅沙发、餐厅家具，适合追求高品质生活方式的精致买手。",
+   shop_url:"https://www.xiaohongshu.com/shop/63aebd1057d3c20001418ec3",
+   account_url:"https://www.xiaohongshu.com/user/profile/5a956a2be8ac2b6db3610ff5",
+   buyers:["一颗KK","有样美学","在家ZAIJIA"],
+   products:[
+     {icon:"sofa",cat:"布艺沙发",name:"云隐三人位布艺沙发",price:"¥7,800起",tip:"北欧极简·获红点奖"},
+     {icon:"table",cat:"实木餐桌",name:"Nordic原木伸缩餐桌",price:"¥5,200起",tip:"一桌两用·家庭聚会"},
+     {icon:"chair",cat:"单人椅",name:"轻羽设计师休闲椅",price:"¥2,980起",tip:"金属架·手工皮垫"},
+     {icon:"tea",cat:"茶几",name:"悬浮系列实木茶几",price:"¥3,600起",tip:"镂空设计·轻盈通透"},
+     {icon:"desk",cat:"书桌",name:"云端L型书桌组合",price:"¥4,200起",tip:"双面储物·设计感强"},
+   ]
+  },
+  {tag:"山东实木重点品牌",brand:"管木匠",name:"管木匠家居旗舰店",
+   intro:"扎根山东临沂实木产业带的匠心品牌，坚守传统榫卯工艺20年，选用北美白蜡木、东北水曲柳等优质原木，每件家具纹理天然、不上漆不贴皮。主营卧室全实木套件，是产业带高品质实木家具的代表。",
+   shop_url:"https://www.xiaohongshu.com/shop/69cdcdbf078527001583b8b9",
+   account_url:"https://www.xiaohongshu.com/user/profile/69a63ee600000000240279cf",
+   buyers:[],
+   products:[
+     {icon:"bed",cat:"实木床",name:"白蜡木榫卯实木大床",price:"¥3,800起",tip:"全实木·无甲醛"},
+     {icon:"table",cat:"实木餐桌",name:"水曲柳一板到顶餐桌",price:"¥4,500起",tip:"整板面·木纹通透"},
+     {icon:"storage",cat:"衣柜",name:"原木推拉门实木衣柜",price:"¥6,800起",tip:"定制尺寸·经久耐用"},
+     {icon:"desk",cat:"书桌",name:"榫卯结构实木书桌",price:"¥2,600起",tip:"手工榫卯·传统工艺"},
+     {icon:"chair",cat:"圈椅",name:"明式实木圈椅茶椅",price:"¥1,800起",tip:"传统造型·现代用料"},
+   ]
+  },
+  {tag:"山东实木重点品牌",brand:"稍安木作",name:"稍安木作的店",
+   intro:"「稍安，木作」——一个倡导放慢生活节奏的实木家具品牌。以山东本地实木工坊为依托，注重展现木材天然肌理与岁月质感，产品多为原木色+亚光处理，餐桌、书桌系列尤受设计类买手青睐。",
+   shop_url:"https://www.xiaohongshu.com/shop/6757fe6a353cbe0015e617f7",
+   account_url:"https://www.xiaohongshu.com/user/profile/666b9ff70000000003032d8f",
+   buyers:["开心的管老板"],
+   products:[
+     {icon:"table",cat:"实木餐桌",name:"素木·宽板实木餐桌",price:"¥3,200起",tip:"原木纹理·哑光质感"},
+     {icon:"desk",cat:"书桌",name:"稍安书斋实木书桌",price:"¥2,800起",tip:"宽桌面·理想书房"},
+     {icon:"shelf",cat:"置物架",name:"原木挂壁式书架组合",price:"¥980起",tip:"可模块拼接·轻薄"},
+     {icon:"tea",cat:"茶台",name:"实木一体茶水台",price:"¥2,200起",tip:"嵌入式水槽·泡茶佳选"},
+     {icon:"bed",cat:"实木床",name:"黑胡桃低床架实木床",price:"¥4,100起",tip:"日式低床·贴近自然"},
+   ]
+  },
+  {tag:"行业大牌",brand:"KUKa 顾家家居",name:"KUKa 顾家家居旗舰店",
+   intro:"中国家居行业市值第一家居品牌，深耕沙发、床垫、床架三大核心品类，持续布局全屋整装赛道。产品线覆盖大众到轻奢，每年推出上百款新品，与国际知名设计师合作频繁，是家居买手合作体量最大的品牌之一。",
+   shop_url:"https://www.xiaohongshu.com/shop/6480303839b63800015ad444",
+   account_url:"https://www.xiaohongshu.com/user/profile/61dba1b1000000001000b169",
+   buyers:["微啦个微","装修挖宝叔","王正杰"],
+   products:[
+     {icon:"sofa",cat:"皮质沙发",name:"K2089意式轻奢皮沙发",price:"¥12,800起",tip:"头层牛皮·三人+贵妃"},
+     {icon:"bed",cat:"软床",name:"云朵系列软包大床",price:"¥5,600起",tip:"零压海绵·高颜值"},
+     {icon:"storage",cat:"衣柜",name:"全屋定制掀翻门衣柜",price:"¥8,800起",tip:"五金件大牌·柜体稳"},
+     {icon:"sofa",cat:"布艺沙发",name:"Nordic棉麻L型沙发",price:"¥6,800起",tip:"可拆洗面料·易打理"},
+     {icon:"table",cat:"餐桌椅组",name:"岩板餐桌六件套",price:"¥9,200起",tip:"耐刮耐热·颜值高"},
+   ]
+  },
+  {tag:"山东实木重点品牌",brand:"休假木作",name:"休假木作MuZo的店",
+   intro:"年轻设计师创立的原创实木家具品牌，以「反快节奏、回归本质」为设计哲学，擅长书房、茶室、冥想空间的整体解决方案。黑胡桃木+哑光铁艺的材质组合是其标志性语言，深受35岁+高净值人群喜爱。",
+   shop_url:"https://www.xiaohongshu.com/shop/680a172285f39f00152c4b65",
+   account_url:"https://www.xiaohongshu.com/user/profile/66ece62a000000001d022d3f",
+   buyers:[],
+   products:[
+     {icon:"desk",cat:"书桌",name:"MuZo黑胡桃实木书桌",price:"¥4,800起",tip:"极简线条·设计师款"},
+     {icon:"tea",cat:"茶台",name:"禅意一体式泡茶台",price:"¥5,600起",tip:"嵌水槽·书房茶室专用"},
+     {icon:"shelf",cat:"书架",name:"格栅铁艺开放式书架",price:"¥2,200起",tip:"钢木结合·工业禅风"},
+     {icon:"chair",cat:"单椅",name:"休假·低背冥想椅",price:"¥1,980起",tip:"盘腿坐·禅意满满"},
+     {icon:"table",cat:"边几",name:"木石组合三脚边桌",price:"¥1,200起",tip:"天然石面·独一无二"},
+   ]
+  },
+  {tag:"行业大牌",brand:"QUANU全友",name:"QUANU全友旗舰店",
+   intro:"全友家私，中国家具十强品牌，30年深耕大众家居市场，以「让好家居走进千家万户」为使命。SKU覆盖卧室全套、客厅全套、儿童房，价格亲民，适合整套出单的买手。在三四线城市及年轻首套房人群中具有极高品牌认知度。",
+   shop_url:"https://www.xiaohongshu.com/shop/657c27d100c6110001a6ed40",
+   account_url:"https://www.xiaohongshu.com/user/profile/625d5f0e000000001000e4f3",
+   buyers:["睡神阿拉丁","杏仁","阚清子"],
+   products:[
+     {icon:"bed",cat:"卧室套装",name:"102088北欧卧室四件套",price:"¥4,200起",tip:"整套购省30%·超值"},
+     {icon:"sofa",cat:"布艺沙发",name:"111024简美L型转角沙发",price:"¥3,800起",tip:"左右互换·小户型友好"},
+     {icon:"storage",cat:"衣柜",name:"移门衣柜滑动趟门组合",price:"¥2,800起",tip:"三门大容量·易组装"},
+     {icon:"table",cat:"餐桌椅组",name:"北欧风伸缩餐桌四件套",price:"¥2,200起",tip:"可伸缩·6-8人用"},
+     {icon:"kid",cat:"儿童床",name:"儿童房多功能子母床",price:"¥3,500起",tip:"上下铺·带书桌"},
+   ]
+  },
+  {tag:"新锐设计品牌",brand:"溪木工坊",name:"溪木工坊家居馆的店",
+   intro:"以「自然材料·手作温度」为品牌核心的新锐家居品牌，主打茶台、置物架、床头柜等中小型家具单品。实木本色结合手工蜡处理，产品透着一股文艺气息，在小红书茶文化、文创生活方式圈层拥有大量忠实粉丝。",
+   shop_url:"https://www.xiaohongshu.com/shop/651138d4effd830001ca90b2",
+   account_url:"https://www.xiaohongshu.com/user/profile/64bb43af000000001403f599",
+   buyers:["喜悦茶器","叶清","小困包睿睿"],
+   products:[
+     {icon:"tea",cat:"茶台",name:"溪木·干泡茶台桌",price:"¥1,600起",tip:"嵌入排水·茶室必备"},
+     {icon:"shelf",cat:"置物架",name:"原木挂墙悬浮展示架",price:"¥680起",tip:"免打孔安装·百搭"},
+     {icon:"table",cat:"边几",name:"实木三脚矮茶几",price:"¥980起",tip:"榻榻米客厅皆宜"},
+     {icon:"storage",cat:"床头柜",name:"原木抽屉床头小柜",price:"¥760起",tip:"手工蜡处理·防水"},
+     {icon:"desk",cat:"书桌",name:"学生实木书桌组合",price:"¥1,800起",tip:"带书架·整洁收纳"},
+   ]
+  },
+  {tag:"新锐设计品牌",brand:"木邻家具",name:"木邻家具旗舰店",
+   intro:"「木邻」意为「与木为邻」，是一家以北欧简约为主线的原创设计家具品牌。主打客厅系列，沙发、茶几、餐桌呈现统一设计语言，注重产品间的搭配性。深受追求整体家居风格的年轻买房群体喜爱，客单价中等偏上。",
+   shop_url:"https://www.xiaohongshu.com/shop/64ae6753fb86f50001ad69a9",
+   account_url:"https://www.xiaohongshu.com/user/profile/5b4adee2e8ac2b703f9a06f7",
+   buyers:["甜丧小老徐","徐cc阿","野柿子小姐"],
+   products:[
+     {icon:"sofa",cat:"布艺沙发",name:"邻家棉麻三人沙发",price:"¥5,200起",tip:"可拆洗·买手爆款"},
+     {icon:"tea",cat:"茶几",name:"实木+岩板茶几组合",price:"¥2,600起",tip:"大中小三件套"},
+     {icon:"table",cat:"餐桌",name:"白橡木四脚圆餐桌",price:"¥3,800起",tip:"圆角设计·安全暖心"},
+     {icon:"chair",cat:"餐椅",name:"小白椅波纹背餐椅",price:"¥680起",tip:"4只起售·颜值高"},
+     {icon:"shelf",cat:"电视柜",name:"岩板实木组合电视柜",price:"¥4,200起",tip:"模块拼接·超大储物"},
+   ]
+  },
+  {tag:"行业大牌",brand:"爱依瑞斯",name:"爱依瑞斯家居旗舰店",
+   intro:"专注小户型与功能性家居解决方案的知名品牌，以折叠沙发床、隐形床、收纳家具起家，在精装公寓、出租房场景下极具竞争力。线上爆款频出，单品突破万单屡见不鲜，是小红书家居买手的高转化合作首选。",
+   shop_url:"https://www.xiaohongshu.com/shop/64910883f189f600017a423a",
+   account_url:"https://www.xiaohongshu.com/user/profile/6090bc540000000001005468",
+   buyers:["一颗KK","有样美学","野柿子小姐"],
+   products:[
+     {icon:"sofa",cat:"折叠沙发床",name:"双人折叠伸缩沙发床",price:"¥1,480起",tip:"三秒展开·小户型神器"},
+     {icon:"bed",cat:"隐形壁床",name:"气压隐形翻折壁床",price:"¥2,800起",tip:"竖放省空间·不显"},
+     {icon:"storage",cat:"收纳柜",name:"入墙式大容量玄关柜",price:"¥1,980起",tip:"顶天立地·藏鞋百双"},
+     {icon:"desk",cat:"折叠书桌",name:"壁挂折叠学习桌",price:"¥680起",tip:"不用即折叠·节省空间"},
+     {icon:"shelf",cat:"置物架",name:"浴室夹缝收纳置物架",price:"¥128起",tip:"可拉伸·寸土必争"},
+   ]
+  },
+  {tag:"山东实木重点品牌",brand:"两刻实木",name:"两刻实木家具的店",
+   intro:"「两刻」代表两刻时光、不疾不徐的生活态度。主产白蜡木、橡木全实木家具，风格偏向日式简约wabi-sabi美学，产品无多余装饰，木纹自然呈现。主营餐桌、床品，在追求质朴生活方式的买手群体中口碑极佳。",
+   shop_url:"https://www.xiaohongshu.com/shop/61e7c21fc16c8f0001edefd0",
+   account_url:"https://www.xiaohongshu.com/user/profile/5754bf036a6a6949bcce4d50",
+   buyers:["王正杰","小小张的成长记录","一木"],
+   products:[
+     {icon:"table",cat:"实木餐桌",name:"白蜡木长方形实木桌",price:"¥3,600起",tip:"日式wabi·纹理通透"},
+     {icon:"bed",cat:"实木床",name:"橡木矮脚平台床架",price:"¥3,200起",tip:"榻榻米感·贴近地面"},
+     {icon:"chair",cat:"餐椅",name:"实木Y型餐椅组合",price:"¥880起",tip:"经典形态·实用耐用"},
+     {icon:"tea",cat:"茶几",name:"低矮圆形实木茶几",price:"¥1,600起",tip:"搭配榻榻米·日式氛围"},
+     {icon:"desk",cat:"书桌",name:"简素实木书桌+搁板",price:"¥2,400起",tip:"两件套·书房即完成"},
+   ]
+  },
+  {tag:"新锐设计品牌",brand:"枝乐 ZHILEKIDS",name:"枝乐 ZHILEKIDS的店",
+   intro:"专注0-12岁儿童成长空间的原创设计品牌，获多项儿童家具安全认证。产品设计兼顾安全防撞、趣味性与成长可扩展性，主打儿童床、学习桌椅系列。在小红书新生代父母圈层中拥有超高种草率，适合母婴、家居买手联动。",
+   shop_url:"https://www.xiaohongshu.com/shop/63f5a9ebbb9ee90001437260",
+   account_url:"https://www.xiaohongshu.com/user/profile/629469a40000000021024170",
+   buyers:["小困包睿睿","🥝田田丫","Tina逛家居"],
+   products:[
+     {icon:"kid",cat:"儿童床",name:"ZHILE云朵系列儿童床",price:"¥2,800起",tip:"防撞圆角·可扩展"},
+     {icon:"desk",cat:"学习桌",name:"升降学习桌椅套装",price:"¥1,980起",tip:"脊柱保护·3-15岁用"},
+     {icon:"storage",cat:"收纳柜",name:"开放式玩具绘本柜",price:"¥1,280起",tip:"磁吸门·随手收纳"},
+     {icon:"shelf",cat:"书架",name:"积木风低矮儿童书架",price:"¥880起",tip:"孩子能自取书"},
+     {icon:"chair",cat:"儿童椅",name:"缤纷坐垫儿童餐椅",price:"¥680起",tip:"可拆卸托盘·易清洁"},
+   ]
+  },
+  {tag:"行业大牌",brand:"曲美QMLAB",name:"QMLAB 曲美感官实验室的店",
+   intro:"曲美家居旗下高端设计师实验室品牌，以「感官重建·生活实验」为理念，联合国际设计师打造系列化家居作品。产品风格极简而富有雕塑感，主打高端沙发、主卧床品、设计师茶几，定位中高端消费者，适合轻奢生活方式买手。",
+   shop_url:"https://www.xiaohongshu.com/shop/69a4e98bdfdd6c00155100a4",
+   account_url:"https://www.xiaohongshu.com/user/profile/5fa4da7a00000000010046de",
+   buyers:[],
+   products:[
+     {icon:"sofa",cat:"设计师沙发",name:"QMLAB Lune月相沙发",price:"¥18,800起",tip:"雕塑感·展厅即家"},
+     {icon:"tea",cat:"茶几",name:"悬浮大理石茶几",price:"¥6,800起",tip:"天然石面·轻奢必备"},
+     {icon:"bed",cat:"软包床",name:"SenseLab感官软包床",price:"¥12,000起",tip:"零压海绵·光学涂层"},
+     {icon:"chair",cat:"单人沙发",name:"Cocoon茧形休闲椅",price:"¥9,600起",tip:"包裹感强·高端读书角"},
+     {icon:"shelf",cat:"陈设柜",name:"极简金属展示陈设柜",price:"¥5,200起",tip:"拉丝金属·艺术收藏"},
+   ]
+  },
+  {tag:"行业大牌",brand:"顾家家居儿童",name:"顾家家居儿童家具旗舰店",
+   intro:"顾家家居旗下独立儿童家具品牌，以「安全·陪伴·成长」为核心理念，产品通过国际儿童家具安全标准认证。覆盖儿童床、书桌衣柜套装、儿童沙发等品类，整体儿童房解决方案完整，适合母婴亲子类买手批量选品。",
+   shop_url:"https://www.xiaohongshu.com/shop/6603fe2fd0c925000161e7ef",
+   account_url:"https://www.xiaohongshu.com/user/profile/64118775000000001102163d",
+   buyers:["淘气包小王子👑（软装ing）","Rachel小花匠","教书匠小米"],
+   products:[
+     {icon:"kid",cat:"儿童床",name:"顾家KIDS星球系列儿童床",price:"¥3,200起",tip:"EN71认证·无甲醛"},
+     {icon:"desk",cat:"学习桌椅",name:"成长型可调节书桌套装",price:"¥2,600起",tip:"3-15岁通用"},
+     {icon:"storage",cat:"儿童衣柜",name:"整体儿童房衣柜",price:"¥4,800起",tip:"顾家品质·整装省心"},
+     {icon:"sofa",cat:"儿童沙发",name:"小豆芽儿童迷你沙发",price:"¥980起",tip:"可当脚踏·超可爱"},
+     {icon:"shelf",cat:"玩具架",name:"多格玩具分类展示架",price:"¥760起",tip:"学龄前必备·整洁"},
+   ]
+  },
+  {tag:"行业大牌",brand:"曲美家具",name:"曲美家具旗舰店",
+   intro:"成立于1993年的老牌家具上市企业，在人体工学沙发和品质床垫领域深耕30年。产品兼顾颜值与舒适，主打中高端消费市场，持续与国际设计师合作推出联名款。线上口碑稳健，属于复购率较高的家居品牌，适合高客单买手。",
+   shop_url:"https://www.xiaohongshu.com/shop/64e30c1aeffd830001e9c584",
+   account_url:"https://www.xiaohongshu.com/user/profile/5e1c48480000000001005412",
+   buyers:["伍十柒-Angela","小众的重","大头姐Anna"],
+   products:[
+     {icon:"sofa",cat:"功能沙发",name:"曲美人体工学电动沙发",price:"¥9,800起",tip:"腰托可调·久坐护腰"},
+     {icon:"bed",cat:"乳胶床垫",name:"天然乳胶分区床垫",price:"¥3,800起",tip:"独立袋装弹簧"},
+     {icon:"chair",cat:"人体工学椅",name:"CQ88电脑椅久坐版",price:"¥2,800起",tip:"脊柱支撑·8H不累"},
+     {icon:"table",cat:"餐桌",name:"岩板圆形转盘餐桌",price:"¥6,600起",tip:"内嵌转盘·家庭聚餐"},
+     {icon:"storage",cat:"床头柜",name:"触控夜灯实木床头柜",price:"¥1,200起",tip:"USB充电口+夜灯"},
+   ]
+  },
+  {tag:"国际品牌",brand:"IMG Comfort",name:"IMG Comfort旗舰店",
+   intro:"来自挪威的高端功能沙发品牌，以精湛皮质工艺和极简斯堪的纳维亚设计著称。核心产品为全皮功能躺椅与多人功能沙发，每件产品均在欧洲完成皮革鞣制与缝制，使用寿命长达20年以上。适合轻奢生活方式、出行达人类买手种草。",
+   shop_url:"https://www.xiaohongshu.com/shop/622b128b66580100011e1ad2",
+   account_url:"https://www.xiaohongshu.com/user/profile/5d0c4821000000001603c613",
+   buyers:[],
+   products:[
+     {icon:"chair",cat:"功能躺椅",name:"IMG Ergo8全皮功能椅",price:"¥16,800起",tip:"挪威制造·终身保修"},
+     {icon:"sofa",cat:"功能沙发",name:"Palliser三人电动沙发",price:"¥28,000起",tip:"欧洲皮革·家庭影院"},
+     {icon:"tea",cat:"脚凳",name:"皮质实木框架脚踏凳",price:"¥3,600起",tip:"配套躺椅·锦上添花"},
+     {icon:"chair",cat:"单人椅",name:"Gravity零重力休闲椅",price:"¥12,800起",tip:"太空舱感·减压利器"},
+     {icon:"sofa",cat:"双人沙发",name:"Orbit旋转双人爱侣沙发",price:"¥22,000起",tip:"360°旋转·亲密无间"},
+   ]
+  },
+  {tag:"新锐设计品牌",brand:"木纳家具",name:"木纳家具的店",
+   intro:"「木纳」——低调、温润、不争先。设计师原创家具品牌，从大自然中汲取灵感，以黑胡桃木、白橡木为主要材料，产品线条简洁不失温度。主营实木书桌、餐桌，在小红书设计圈、创业者办公空间内拥有忠实粉丝群体。",
+   shop_url:"https://www.xiaohongshu.com/shop/6271387798970c0001d215cd",
+   account_url:"https://www.xiaohongshu.com/user/profile/5bc6f97738d8fa00011b4d77",
+   buyers:["野柿子小姐","木木夕","酷笑和Chris"],
+   products:[
+     {icon:"desk",cat:"书桌",name:"木纳·胡桃木L型书桌",price:"¥3,800起",tip:"哑光饰面·设计感强"},
+     {icon:"table",cat:"实木餐桌",name:"白橡木四人圆餐桌",price:"¥3,200起",tip:"圆桌更聚气·家庭感"},
+     {icon:"shelf",cat:"书架",name:"格栅木质落地书架",price:"¥1,600起",tip:"大容量·展示+收纳"},
+     {icon:"tea",cat:"茶几",name:"矮脚实木正方茶几",price:"¥1,800起",tip:"黑胡桃色·百搭"},
+     {icon:"storage",cat:"斗柜",name:"原木五斗储物斗柜",price:"¥2,600起",tip:"实木抽屉·静音导轨"},
+   ]
+  },
+  {tag:"行业大牌",brand:"芝华仕",name:"芝华仕旗舰店",
+   intro:"中国功能沙发品类第一品牌，以「头等舱沙发」系列开创国内功能沙发赛道。持续研发电动调节、USB充电、加热按摩等智能功能，是连续多年天猫双11家具类目销售额冠军。适合家居功能品类买手，转化率极高。",
+   shop_url:"https://www.xiaohongshu.com/shop/64f57eea8265a10001b20b04",
+   account_url:"https://www.xiaohongshu.com/user/profile/64d841b80000000001013766",
+   buyers:["有样美学","装修挖宝叔","煜儿妈咪"],
+   products:[
+     {icon:"sofa",cat:"功能沙发",name:"头等舱电动功能沙发",price:"¥5,800起",tip:"双11冠军款·爆销"},
+     {icon:"chair",cat:"功能椅",name:"单人按摩电动躺椅",price:"¥3,200起",tip:"8点按摩·加热护腰"},
+     {icon:"sofa",cat:"布艺沙发",name:"棉麻L型布艺沙发",price:"¥4,200起",tip:"科技布·防脏防猫抓"},
+     {icon:"bed",cat:"电动床",name:"零重力电动调节床架",price:"¥6,800起",tip:"多角度调节·助眠"},
+     {icon:"tea",cat:"沙发边几",name:"充电旋转沙发边几",price:"¥680起",tip:"USB+无线充电"},
+   ]
+  },
+  {tag:"国际品牌",brand:"Stressless思特莱斯",name:"Stressless思特莱斯旗舰店",
+   intro:"创立于1971年的挪威百年家居品牌，以独有「Plus™平衡系统」专利技术享誉全球。每把椅子均在挪威工厂手工完成，采用欧洲顶级半苯胺皮革，支持定制颜色与木腿材质。是国内进口高端家居买手最具号召力的合作品牌之一。",
+   shop_url:"https://www.xiaohongshu.com/shop/662f34ac3bf50b00017d4d36",
+   account_url:"https://www.xiaohongshu.com/user/profile/590d67306a6a6921bb10e9e0",
+   buyers:[],
+   products:[
+     {icon:"chair",cat:"功能躺椅",name:"Ekornes Mayfair功能椅",price:"¥28,000起",tip:"挪威手工·百年工艺"},
+     {icon:"sofa",cat:"多人沙发",name:"Stressless Emily皮沙发",price:"¥48,000起",tip:"Plus™平衡系统专利"},
+     {icon:"chair",cat:"脚凳套装",name:"配套皮质实木脚凳",price:"¥8,800起",tip:"与主椅完美配套"},
+     {icon:"sofa",cat:"双人沙发",name:"Rome系列双人爱侣椅",price:"¥35,000起",tip:"可360°旋转底座"},
+     {icon:"tea",cat:"边桌",name:"实木拼接橡木边几",price:"¥4,200起",tip:"挪威橡木·原装进口"},
+   ]
+  },
+];
+
+const tagClass = {"行业大牌":"tag-da","新锐设计品牌":"tag-xin","山东实木重点品牌":"tag-sd","国际品牌":"tag-int"};
+
+function renderCards(){
+  const grid = document.getElementById('grid');
+// 给每个商家的商品注入图片
+  const shopImages = {
+  "63aebd1057d3c20001418ec3": [
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o030s9k8i6vii004a2spdl2m3vl18ot4q0?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o030s8kekl72k004a2spdl2m3vlradu7fo?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31f4cl7le6q0g4a2spdl2m3vlt7ggme8?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o0312t35i93k0004a2spdl2m3vl372hr98?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031fes3oc676004a2spdl2m3vl1qrrjao?imageView2/2/w/400/format/jpg/q/80"
+  ],
+  "69cdcdbf078527001583b8b9": [
+    "https://mall-i2.xhscdn.com/arkgoods/1040g3no31uo17pa03m005qd67rj94uefhn3q12o?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i2.xhscdn.com/arkgoods/1040g3no31vb6ln7j1u0g5qd67rj94uef46gvst8?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i2.xhscdn.com/arkgoods/1040g3no31up7e05p2s0g5qd67rj94uefknqjaq0?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i2.xhscdn.com/arkgoods/1040g0o031upadfdm1m005qd67rj94uefqvce1f8?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i2.xhscdn.com/arkgoods/1040g3no31vb8549c1m0g5qd67rj94uef3lovopg?imageView2/2/w/400/format/jpg/q/80"
+  ],
+  "6757fe6a353cbe0015e617f7": [
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031sbt0v4q5c0g5pjbjvrgubcfjka2h38?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031t20k0igle005pjbjvrgubcf0r4ll78?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031sfvrj7h5a705pjbjvrgubcful56ms0?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31hlmdce6j80g5pjbjvrgubcf6g5tst8?imageView2/2/w/400/format/jpg/q/80"
+  ],
+  "6480303839b63800015ad444": [
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31i29nbqbms0g5oerk6ok1cb9a9m62go?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o0310q1pu3amc005oerk6ok1cb9k2fqd3g?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31mk03td54u0g5oerk6ok1cb9rp4fb4o?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031ohmspp24s005oerk6ok1cb9br4vlq0?imageView2/2/w/400/format/jpg/q/80"
+  ],
+  "680a172285f39f00152c4b65": [
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031pb7m58e26005pncsol7cb9vl3km91o?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031go4becija005pncsol7cb9vsdncr4o?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031theg9bq56705pncsol7cb9v2udgcq0?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031go1qc8b38005pncsol7cb9v56dhsq0?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031gnubfq0j4005pncsol7cb9v536ikf0?imageView2/2/w/400/format/jpg/q/80"
+  ],
+  "657c27d100c6110001a6ed40": [
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31l6u6fnil20g5oitbs741p7jg2hl8i0?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31rh33v011e0g5oitbs741p7jjr6rrgo?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31krbja4j360g5oitbs741p7jmgopl90?imageView2/2/w/400/format/jpg/q/80"
+  ],
+  "651138d4effd830001ca90b2": [
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o030prf8i6g6q005p5r8enl7tcpk1q9e10?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o030srq3s6pjs005p5r8enl7tcpqf1r178?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o030qm409gc0i005p5r8enl7tcpq79m1o0?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o030ps9trg9mk005p5r8enl7tcpjn95id0?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o03125labcg1o005p5r8enl7tcp7arnqq0?imageView2/2/w/400/format/jpg/q/80"
+  ],
+  "64ae6753fb86f50001ad69a9": [
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31th470tp560g4a75r0fe41nnrl1lit8?imageView2/2/w/400/format/jpg/q/80"
+  ],
+  "64910883f189f600017a423a": [
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31lad4vhd4u0g5o4gnha08l38rm4jlvg?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031o8o02rn4s005o4gnha08l38mtqhj3o?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o0314dt4ntu62005o4gnha08l38kdbeiv0?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o0314mvcrfam2005o4gnha08l387403u90?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o0314mvbcg1lu005o4gnha08l3809hq840?imageView2/2/w/400/format/jpg/q/80"
+  ],
+  "61e7c21fc16c8f0001edefd0": [
+    "https://mall-i1.xhscdn.com/arkgoods/104103ng31i29jct77a7mbnc2urh00000000000mrtf54s?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1000g0o02neaaqusji00048e6j0vg6jagv2fgg0g?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o0310bj677bmk0048e6j0vg6jagqur4nsg?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o0311kp9af3n60048e6j0vg6jag19lkg50?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o0316dvv09m0o0048e6j0vg6jagebe55v0?imageView2/2/w/400/format/jpg/q/80"
+  ],
+  "63f5a9ebbb9ee90001437260": [
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o030s70e9sbim005okkd6i8cgbg1do7aqg?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o030pr3se1t6q005okkd6i8cgbg1ho45vg?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o0315cvo04o0m005okkd6i8cgbgi8o6pmo?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31drb19kah60g5okkd6i8cgbgrv97il8?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o030rrflat1is005okkd6i8cgbg5okd0po?imageView2/2/w/400/format/jpg/q/80"
+  ],
+  "69a4e98bdfdd6c00155100a4": [
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31u1s7gi71a0g5nt4r9t08hmum43kmv8?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031u266jm7go705nt4r9t08hmucr9su3o?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031u2679bu0o005nt4r9t08hmu69r1tko?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31u266t8igs005nt4r9t08hmumrc0nf8?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31u2667uhh8eg5nt4r9t08hmue6afpfg?imageView2/2/w/400/format/jpg/q/80"
+  ],
+  "6603fe2fd0c925000161e7ef": [],
+  "64e30c1aeffd830001e9c584": [
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o030oef9t56ia005ngs92008l0ihg3k45g?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031cujn60fh6005ngs92008l0ick5tvao?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031aesv0g86u005ngs92008l0imi2lim8?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031b5tsrns6o705ngs92008l0i0df0uf0?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31f0bo63u5u0g5ngs92008l0idqah1ko?imageView2/2/w/400/format/jpg/q/80"
+  ],
+  "622b128b66580100011e1ad2": [
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031tks8q0b7u005n8c90glnhgje56chl0?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031tks6a88mi005n8c90glnhgjqesfmqg?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31tks4phhmq0g5n8c90glnhgjh8cg5qg?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031tkse92b7s005n8c90glnhgjku94qm0?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31os8g6c1120g5n8c90glnhgjrsh2kh8?imageView2/2/w/400/format/jpg/q/80"
+  ],
+  "6271387798970c0001d215cd": [
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o030r1ttkbvhk004bg887snejbnnraq150?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031ladmav4ks004bg887snejbnlpnnrk8?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31m5qgbq9ks0g4bg887snejbnsg4f170?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o030r21q20ahi004bg887snejbnob3iskg?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031hf05sb538004bg887snejbnbuo179g?imageView2/2/w/400/format/jpg/q/80"
+  ],
+  "64f57eea8265a10001b20b04": [
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31ohbmg884q0g5p6o86s0adr6qrgg570?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031ohpiernl0005p6o86s0adr692mvheg?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31ogct7g44u0g5p6o86s0adr66kpq0ro?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031ogcd4uf4u005p6o86s0adr60dr4edg?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31ogcsg6t4s1g5p6o86s0adr6nh720go?imageView2/2/w/400/format/jpg/q/80"
+  ],
+  "662f34ac3bf50b00017d4d36": [
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31rr8vbgo221049ff9qjj1qf0qrefk8o?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031uug2seq1u0049ff9qjj1qf0c46l5jg?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g3no31rq1qvmp280g49ff9qjj1qf0g967k38?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031tidqhgj5a0049ff9qjj1qf0699u6s0?imageView2/2/w/400/format/jpg/q/80",
+    "https://mall-i1.xhscdn.com/arkgoods/1040g0o031tiekpfk580049ff9qjj1qf04ppssso?imageView2/2/w/400/format/jpg/q/80"
+  ]
+};
+  const merchantIds = ["63aebd1057d3c20001418ec3", "69cdcdbf078527001583b8b9", "6757fe6a353cbe0015e617f7", "6480303839b63800015ad444", "680a172285f39f00152c4b65", "657c27d100c6110001a6ed40", "651138d4effd830001ca90b2", "64ae6753fb86f50001ad69a9", "64910883f189f600017a423a", "61e7c21fc16c8f0001edefd0", "63f5a9ebbb9ee90001437260", "69a4e98bdfdd6c00155100a4", "6603fe2fd0c925000161e7ef", "64e30c1aeffd830001e9c584", "622b128b66580100011e1ad2", "6271387798970c0001d215cd", "64f57eea8265a10001b20b04", "662f34ac3bf50b00017d4d36"];
+  merchants.forEach((m, mi) => {
+    const imgs = shopImages[merchantIds[mi]] || [];
+    m.products.forEach((p, pi) => { p.img = imgs[pi] || ''; });
+  });
+    grid.innerHTML = merchants.map(m => `
+    <div class="card" data-tag="${m.tag}">
+      <div class="card-top">
+        <span class="tag ${tagClass[m.tag]}">${m.tag}</span>
+        <div class="brand-name">${m.brand}</div>
+        <div class="shop-name">${m.name}</div>
+        <div class="intro">${m.intro}</div>
+      </div>
+      <div class="products-title">核心货品展示</div>
+      <div class="products-scroll">
+        ${m.products.map(p=>`
+          <div class="prod-card">
+            ${p.img ? `<img class="prod-img" src="${p.img}" loading="lazy" onerror="this.style.display='none'">` : `<svg class="prod-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">${icons[p.icon]}</svg>`}
+            <div class="prod-cat">${p.cat}</div>
+            <div class="prod-name">${p.name}</div>
+            <div class="prod-price">${p.price}</div>
+            <div class="prod-tip">${p.tip}</div>
+          </div>
+        `).join('')}
+      </div>
+      <div class="buyers-wrap">
+        <div class="buyers-title">历史合作买手 TOP3</div>
+        <div class="buyers-list">
+          ${m.buyers.length ? m.buyers.map(b=>`<span class="buyer-tag">${b}</span>`).join('') : '<span class="no-buyer">暂无合作记录</span>'}
+        </div>
+      </div>
+      <div class="card-btns">
+        <a class="btn btn-solid" href="${m.shop_url}" target="_blank">进店看看 →</a>
+        <a class="btn" href="${m.account_url}" target="_blank">查看账号 →</a>
+      </div>
+    </div>
+  `).join('');
+}
+
+function bindFilter(){
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.card').forEach(card=>{
+        if(f==='all'||card.dataset.tag===f){card.classList.remove('hidden')}
+        else{card.classList.add('hidden')}
+      });
+    });
+  });
+}
+
+renderCards();
+bindFilter();
+</script>
+</body>
+</html>
