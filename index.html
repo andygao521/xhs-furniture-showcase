@@ -9,450 +9,606 @@
 body{background:#faf8f5;font-family:'PingFang SC','Microsoft YaHei',sans-serif;color:#2d1b0e}
 .hero{background:linear-gradient(135deg,#3d2314 0%,#6b3a22 60%,#8b5e3c 100%);padding:48px 24px 40px;text-align:center;color:#fff}
 .hero h1{font-size:2rem;font-weight:700;letter-spacing:2px;margin-bottom:8px}
-.hero p{font-size:1rem;opacity:.85;margin-bottom:28px}
-.stats{display:flex;justify-content:center;gap:48px}
-.stat{text-align:center}
-.stat-num{font-size:2rem;font-weight:700;display:block}
-.stat-label{font-size:.8rem;opacity:.7;margin-top:2px}
-.filter-wrap{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e8ddd4;padding:12px 24px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.filter-btn{padding:7px 18px;border-radius:20px;border:2px solid #c9b8a8;background:#fff;color:#5c4a3a;font-size:.85rem;cursor:pointer;transition:.2s;font-weight:500}
-.filter-btn:hover{border-color:#6b3a22;color:#6b3a22}
-.filter-btn.active{background:#6b3a22;border-color:#6b3a22;color:#fff}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1280px;margin:32px auto;padding:0 24px}
-@media(max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.grid{grid-template-columns:1fr;padding:0 16px}}
-.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);transition:.25s;border:1px solid #f0e8e0}
-.card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.13)}
-.card.hidden{display:none}
-.card-top{padding:18px 20px 0}
-.tag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:.72rem;font-weight:600;color:#fff;margin-bottom:10px}
-.tag-da{background:#5c3d2e}
-.tag-xin{background:#8b5e3c}
-.tag-sd{background:#4a6741}
-.tag-int{background:#2c5282}
-.brand-name{font-size:1.1rem;font-weight:700;color:#2d1b0e;margin-bottom:10px;line-height:1.4}
-.intro{font-size:.84rem;line-height:1.65;color:#5c4a3a;padding-bottom:14px;border-bottom:1px solid #f0e8e0}
-.products-title{font-size:.78rem;color:#9e8878;font-weight:600;padding:12px 20px 8px;letter-spacing:1px}
-.products-scroll{display:flex;gap:10px;overflow-x:auto;padding:0 20px 14px;scrollbar-width:thin;scrollbar-color:#d4c4b8 transparent}
-.products-scroll::-webkit-scrollbar{height:4px}
-.products-scroll::-webkit-scrollbar-thumb{background:#d4c4b8;border-radius:2px}
-.prod-card{flex:0 0 110px;background:#faf8f5;border-radius:10px;overflow:hidden;border:1px solid #ede4da}
-.prod-img{width:100%;height:90px;object-fit:cover;background:#f0ebe4;display:block}
-.prod-placeholder{width:100%;height:90px;background:#f0ebe4;display:flex;align-items:center;justify-content:center}
-.prod-placeholder svg{width:44px;height:44px;opacity:.4}
-.no-products{font-size:.78rem;color:#c4b5a8;font-style:italic;padding:0 20px 14px}
-.buyers-wrap{padding:0 20px 14px;border-top:1px solid #f0e8e0;margin-top:4px}
-.buyers-title{font-size:.78rem;color:#9e8878;font-weight:600;padding:10px 0 6px;letter-spacing:1px}
-.buyers-list{display:flex;flex-wrap:wrap;gap:6px}
-.buyer-tag{background:#fdf3ec;border:1px solid #e8c9aa;color:#8b5e3c;font-size:.75rem;padding:3px 10px;border-radius:12px;font-weight:500}
-.no-buyer{font-size:.78rem;color:#c4b5a8;font-style:italic}
-.card-btns{display:flex;gap:10px;padding:14px 20px 18px;border-top:1px solid #f0e8e0}
-.btn{flex:1;text-align:center;padding:8px 0;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;transition:.2s;border:2px solid #6b3a22;color:#6b3a22}
-.btn:hover{background:#6b3a22;color:#fff}
-.btn-solid{background:#6b3a22;color:#fff}
-.btn-solid:hover{background:#4a2710}
-footer{text-align:center;padding:32px 24px;color:#b0a09a;font-size:.78rem;line-height:1.8;border-top:1px solid #e8ddd4;margin-top:16px}
+.hero p{font-size:.95rem;opacity:.85;margin-bottom:20px}
+.hero-stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.hero-stat{text-align:center}
+.hero-stat .num{font-size:1.6rem;font-weight:700}
+.hero-stat .label{font-size:.78rem;opacity:.75;margin-top:2px}
+.filter-bar{background:#fff;padding:20px 24px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;border-bottom:1px solid #ede4da;position:sticky;top:0;z-index:10}
+.filter-btn{padding:8px 20px;border-radius:20px;border:1.5px solid #d4c5b8;background:#fff;color:#6b3a22;font-size:.88rem;cursor:pointer;transition:all .2s;white-space:nowrap}
+.filter-btn.active,.filter-btn:hover{background:#6b3a22;color:#fff;border-color:#6b3a22}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;padding:24px;max-width:1400px;margin:0 auto}
+.merchant-card{background:#fff;border-radius:16px;border:1px solid #ede4da;overflow:hidden;transition:box-shadow .2s}
+.merchant-card:hover{box-shadow:0 8px 32px rgba(107,58,34,.12)}
+.card-header{padding:20px 20px 14px}
+.tag-badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.72rem;color:#fff;margin-bottom:8px}
+.shop-name{font-size:1.1rem;font-weight:700;color:#2d1b0e;margin-bottom:8px;line-height:1.4}
+.shop-intro{font-size:.82rem;color:#8b6e5a;line-height:1.6}
+.prod-section{padding:0 20px 14px}
+.prod-label{font-size:.78rem;color:#8b6e5a;margin-bottom:8px;font-weight:600}
+.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.prod-card{border-radius:8px;overflow:hidden;background:#f0ebe4;aspect-ratio:1}
+.prod-img{width:100%;height:100%;object-fit:cover;display:block}
+.prod-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.prod-placeholder svg{width:28px;height:28px}
+.buyer-section{padding:0 20px 14px}
+.buyer-label{font-size:.78rem;color:#8b6e5a;margin-bottom:6px;font-weight:600}
+.buyer-tags{display:flex;flex-wrap:wrap;gap:6px}
+.buyer-tag{padding:3px 10px;background:#fdf3ec;border:1px solid #f0d8c8;border-radius:12px;font-size:.75rem;color:#6b3a22}
+.buyer-none{font-size:.75rem;color:#c4b5a8}
+.card-footer{padding:14px 20px;border-top:1px solid #f5ede4;display:flex;gap:10px}
+.btn{flex:1;padding:8px;border-radius:8px;text-align:center;text-decoration:none;font-size:.82rem;font-weight:600;transition:all .2s}
+.btn-shop{background:#6b3a22;color:#fff}
+.btn-shop:hover{background:#3d2314}
+.btn-account{background:#fdf3ec;color:#6b3a22;border:1px solid #e8d5c4}
+.btn-account:hover{background:#f5e4d4}
+@media(max-width:600px){
+  .hero h1{font-size:1.4rem}
+  .grid{grid-template-columns:1fr;padding:16px}
+  .hero-stats{gap:20px}
+}
 </style>
 </head>
 <body>
-
 <div class="hero">
   <h1>🏠 买手选品 · 家具商家阵容</h1>
-  <p>罗尔精选 28 家 | 近180天K播数据更新</p>
-  <div class="stats">
-    <div class="stat"><span class="stat-num">28</span><span class="stat-label">在库商家</span></div>
-    <div class="stat"><span class="stat-num">4</span><span class="stat-label">品牌分类</span></div>
-    <div class="stat"><span class="stat-num">180天</span><span class="stat-label">K播数据</span></div>
+  <p>罗尔精选 · 近180天K播数据更新</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">28</div><div class="label">在库商家</div></div>
+    <div class="hero-stat"><div class="num">11</div><div class="label">行业大牌</div></div>
+    <div class="hero-stat"><div class="num">9</div><div class="label">新锐设计</div></div>
+    <div class="hero-stat"><div class="num">K播数据</div><div class="label">近180天</div></div>
   </div>
 </div>
-
-<div class="filter-wrap">
-  <button class="filter-btn active" data-filter="all">全部 (28)</button>
-  <button class="filter-btn" data-filter="行业大牌">行业大牌 (13)</button>
-  <button class="filter-btn" data-filter="新锐设计品牌">新锐设计品牌 (9)</button>
-  <button class="filter-btn" data-filter="山东实木品牌">山东实木品牌 (4)</button>
-  <button class="filter-btn" data-filter="国际大牌">国际大牌 (2)</button>
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filter('全部')">全部 (28)</button>
+  <button class="filter-btn" onclick="filter('行业大牌')">行业大牌 (11)</button>
+  <button class="filter-btn" onclick="filter('新锐设计品牌')">新锐设计品牌 (9)</button>
+  <button class="filter-btn" onclick="filter('山东实木品牌')">山东实木品牌 (6)</button>
+  <button class="filter-btn" onclick="filter('国际大牌')">国际大牌 (2)</button>
 </div>
-
-<div class="grid" id="grid"></div>
-
-<footer>
-  罗尔 · 小红书家居行业七组 · 家具品牌买手参考手册 · 2025<br>
-  历史合作买手数据来源：小红书BK买手带货全链路数据 · 近180天统计
-</footer>
-
+<div class="grid" id="grid">
+<div class="merchant-card" data-tag="山东实木品牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#6b3a22">山东实木品牌</span>
+    <h3 class="shop-name">管木匠家居旗舰店</h3>
+    <p class="shop-intro">山东潍坊实木家具工厂，专注榉木、橡木定制，工厂直供价格提供高品质实木收纳柜、展示柜，工艺扎实，交期稳定，K播爆单能力强。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0320n136jm5i005qd67rj94ueff6ih750?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0320pitrdomo005qd67rj94uef769760o?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0321i1ggdv72005qd67rj94uefvbfvg2o?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0322skrsctn00g5qd67rj94uefcc71kmo?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31vvvlqmkis0g5qd67rj94uefifbenhg?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 开心的管老板</span><span class="buyer-tag">🤝 管木匠木作工厂</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/69cdcdbf078527001583b8b9" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/69a63ee600000000240279cf" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="行业大牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#8B2020">行业大牌</span>
+    <h3 class="shop-name">源氏木语实木家居旗舰店</h3>
+    <p class="shop-intro">知名实木家居品牌，覆盖床、衣柜、餐桌等全品类，北欧简约风格，品牌认知度高，站内种草生态成熟，店播+K播双渠道稳健。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0315a2ot4ags004a39dehn21n2g3oo5ug?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031rbornmlmu004a39dehn21n23g6os58?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031rbpmrt8n4004a39dehn21n294hogio?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031tjinufmmq004a39dehn21n22t399f8?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031ugc2pi6hu004a39dehn21n2btf734o?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 一颗KK</span><span class="buyer-tag">🤝 有样美学</span><span class="buyer-tag">🤝 Joy张宇宙</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/61c53887773004000124d1a4" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/5aa5e37111be1001a6ae06e2" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="新锐设计品牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#1a5c3a">新锐设计品牌</span>
+    <h3 class="shop-name">舒梵旗舰店</h3>
+    <p class="shop-intro">原创设计家具品牌，擅长将工业风与东方美学融合，产品辨识度高，内容营销能力突出，爆款笔记转化力强，适合追求差异化选品的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030mud0t6dki004a2spdl2m3vlqml9va0?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030s8kekl72k004a2spdl2m3vlradu7fo?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030s9k8i6vii004a2spdl2m3vl18ot4q0?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030shd33q5ja004a2spdl2m3vlf1tvjr8?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030shddt36je004a2spdl2m3vldjh77hg?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 一颗KK</span><span class="buyer-tag">🤝 甜丧小老徐</span><span class="buyer-tag">🤝 野柿子小姐</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/63aebd1057d3c20001418ec3" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/5a956a2be8ac2b6db3610ff5" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="行业大牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#8B2020">行业大牌</span>
+    <h3 class="shop-name">KUKa 顾家家居旗舰店</h3>
+    <p class="shop-intro">顾家家居旗下沙发主力品牌，主打功能沙发、布艺沙发，大牌背书信任度高，促销活动丰富，适合大体量带货合作。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030osgahpj3m005oerk6ok1cb9t99e7e0?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0310q1pu3amc005oerk6ok1cb9k2fqd3g?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o03136337cihe005oerk6ok1cb90luvb00?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031mk1j4ke52005oerk6ok1cb9g2toejg?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31mk03td54u0g5oerk6ok1cb9rp4fb4o?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 绝世小土豆</span><span class="buyer-tag">🤝 阿朱的世界（软装ing ）🛒</span><span class="buyer-tag">🤝 饱_饱</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/6480303839b63800015ad444" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/61dba1b1000000001000b169" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="新锐设计品牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#1a5c3a">新锐设计品牌</span>
+    <h3 class="shop-name">溪木工坊家居馆的店</h3>
+    <p class="shop-intro">专注中古风实木家居，茶桌、罗汉床等东方生活美学产品，调性独特，粉丝粘性强，适合有生活美学内容方向的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030poop9ohmm005p5r8enl7tcpsadpjq8?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030prf8i6g6q005p5r8enl7tcpk1q9e10?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030ps9trg9mk005p5r8enl7tcpjn95id0?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030psjv98vmu005p5r8enl7tcpa803aho?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030psnoacomm005p5r8enl7tcp5sd48t8?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 一颗KK</span><span class="buyer-tag">🤝 玩茶人</span><span class="buyer-tag">🤝 星光夜市</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/651138d4effd830001ca90b2" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/64bb43af000000001403f599" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="山东实木品牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#6b3a22">山东实木品牌</span>
+    <h3 class="shop-name">稍安木作的店</h3>
+    <p class="shop-intro">山东实木小众工坊，主打原木简约风，榉木、椿木选材考究，产品走量稳健，适合喜爱原木生活方式内容创作的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031sbt0v4q5c0g5pjbjvrgubcfjka2h38?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031sfvrj7h5a705pjbjvrgubcful56ms0?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0321ulj6qhn2005pjbjvrgubcfk600u20?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31hlmdce6j80g5pjbjvrgubcf6g5tst8?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 开心的管老板</span><span class="buyer-tag">🤝 萌芽小幸福</span><span class="buyer-tag">🤝 yoyookok</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/6757fe6a353cbe0015e617f7" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/666b9ff70000000003032d8f" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="国际大牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#1a3a5c">国际大牌</span>
+    <h3 class="shop-name">IMG Comfort旗舰店</h3>
+    <p class="shop-intro">挪威功能沙发国际品牌，主打人体工学功能椅，客单价高，品质感强，适合高净值人群内容方向的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0320ectj95li005n8c90glnhgjvpp12q0?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0320ecvqep5e005n8c90glnhgjn0puuko?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0320ed23mu5e005n8c90glnhgjepo6f5o?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0320ed3efv5c005n8c90glnhgjgqqje30?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0320ed3smf5e005n8c90glnhgj0ufltbo?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 章小蕙</span><span class="buyer-tag">🤝 Joy张宇宙</span><span class="buyer-tag">🤝 玫瑰是玫瑰</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/622b128b66580100011e1ad2" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/5d0c4821000000001603c613" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="山东实木品牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#6b3a22">山东实木品牌</span>
+    <h3 class="shop-name">休假木作MuZo的店</h3>
+    <p class="shop-intro">潍坊原木家具工坊，主打度假风实木家居，产品有设计感，内容调性轻松治愈，适合生活方式类买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031gmmgo9834005pncsol7cb9vshdvhno?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031gnutbnf423g5pncsol7cb9vckbv3o0?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031go1qc8b38005pncsol7cb9v56dhsq0?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031go4becija005pncsol7cb9vsdncr4o?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031i1f9c5r6k005pncsol7cb9vjjp1b0g?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 Gemini邱邱</span><span class="buyer-tag">🤝 子禾家🏠</span><span class="buyer-tag">🤝 昕昕cici</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/680a172285f39f00152c4b65" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/66ece62a000000001d022d3f" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="新锐设计品牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#1a5c3a">新锐设计品牌</span>
+    <h3 class="shop-name">营造空间·搜罗万象家具的店</h3>
+    <p class="shop-intro">聚焦进口二手家具及设计师款，选品独特，走高端小众路线，适合有海外或设计师品牌内容基因的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0317dago4v3k005ojttq38ch2l91aoreo?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0317egchc73k005ojttq38ch2l47q8r1o?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031cbl7mqgge005ojttq38ch2l3pk9oh8?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031cbn2c4g08005ojttq38ch2lqsojo3g?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031cduu0ot08005ojttq38ch2lt0nif08?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 小家大冒险</span><span class="buyer-tag">🤝 野柿子小姐</span><span class="buyer-tag">🤝 星光夜市</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/64bf8c82421de40001754622" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/627dee860000000021024455" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="新锐设计品牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#1a5c3a">新锐设计品牌</span>
+    <h3 class="shop-name">营造空间-飞行者的店</h3>
+    <p class="shop-intro">营造空间旗下新店，主打设计感家具，产品风格与主店互补，适合探索家居设计新品内容方向的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031q9bm3la70005oj8s17415r7793psig?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031tt1p0vr0s1g5oj8s17415r7s0qa28o?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31kopuq43480g5oj8s17415r7g2ja75g?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31ksdq1djjq0g5oj8s17415r7t6s9g68?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31rhutnd21e0g5oj8s17415r7c1kudoo?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-none">暂无K播合作记录</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/684936e95a7cc60015a470a7" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/6268e04e0000000010009767" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="山东实木品牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#6b3a22">山东实木品牌</span>
+    <h3 class="shop-name">两刻实木家具的店</h3>
+    <p class="shop-intro">山东实木家具老牌品牌，专注白蜡木、橡木实木床及餐桌，工艺稳定，性价比突出，适合实木家居内容方向的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1000g0o02neaaqusji00048e6j0vg6jagv2fgg0g?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0310bj677bmk0048e6j0vg6jagqur4nsg?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0312nsfmvh1m0048e6j0vg6jagshj2v58?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0316dvv09m0o0048e6j0vg6jagebe55v0?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031kj7keu7j60048e6j0vg6jagboj971o?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 铭仔麻麻</span><span class="buyer-tag">🤝 宸仔没烦恼</span><span class="buyer-tag">🤝 秋秋</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/61e7c21fc16c8f0001edefd0" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/5754bf036a6a6949bcce4d50" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="行业大牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#8B2020">行业大牌</span>
+    <h3 class="shop-name">QUANU全友旗舰店</h3>
+    <p class="shop-intro">全国知名家居品牌，覆盖沙发、床、衣柜等全品类，大牌背书，促销敏感度高，适合大流量带货合作。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031hqn4gm438005oitbs741p7jrft9eq8?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031lv1kbvrkq005oitbs741p7j6jss518?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31krbja4j360g5oitbs741p7jmgopl90?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31l6u6fnil20g5oitbs741p7jg2hl8i0?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31q96d4i9n20g5oitbs741p7j4n11cuo?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-none">暂无K播合作记录</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/657c27d100c6110001a6ed40" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/625d5f0e000000001000e4f3" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="行业大牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#8B2020">行业大牌</span>
+    <h3 class="shop-name">QMLAB 曲美感官实验室的店</h3>
+    <p class="shop-intro">曲美旗下高端子品牌，融合北欧设计与东方美学，产品溢价能力强，适合有高品质生活内容方向的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31u1s7gi71a0g5nt4r9t08hmum43kmv8?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no321906uu9n40g5nt4r9t08hmu53ikubo?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 泽龙Z</span><span class="buyer-tag">🤝 灰灰灰太狼</span><span class="buyer-tag">🤝 开心的管老板</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/69a4e98bdfdd6c00155100a4" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/5fa4da7a00000000010046de" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="新锐设计品牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#1a5c3a">新锐设计品牌</span>
+    <h3 class="shop-name">枝乐 ZHILEKIDS的店</h3>
+    <p class="shop-intro">专注儿童实木家具，颜值与安全并重，小众高端定位，口碑极佳，适合母婴或儿童成长内容方向的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030pr3se1t6q005okkd6i8cgbg1ho45vg?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030rrflat1is005okkd6i8cgbg5okd0po?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030s70e9sbim005okkd6i8cgbg1do7aqg?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0315cvo04o0m005okkd6i8cgbgi8o6pmo?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031h0sbo4h3a005okkd6i8cgbgh0bui88?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 墨汐康康</span><span class="buyer-tag">🤝 喜乐吖～</span><span class="buyer-tag">🤝 嘉不加一📷</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/63f5a9ebbb9ee90001437260" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/629469a40000000021024170" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="山东实木品牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#6b3a22">山东实木品牌</span>
+    <h3 class="shop-name">愫墨旗舰店</h3>
+    <p class="shop-intro">山东实木工坊，主打新中式实木家居，茶台、书架等品类齐全，传统工艺与现代设计融合，适合新中式生活美学内容方向的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1000g0o02hq6k27eim0005n15pe61qd2uc9156gg?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1000g0o02nf610kgji0005n15pe61qd2u69m3q58?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030pu07jn06k005n15pe61qd2us7fn3rg?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031ju2kbkj2a005n15pe61qd2urub8368?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031k06fbdv2g005n15pe61qd2ug33s0jg?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 一颗KK</span><span class="buyer-tag">🤝 听听月亮</span><span class="buyer-tag">🤝 幸福感小物</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/61d555bb2bf6530001fd5cde" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/5c25cb8c000000000701345e" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="行业大牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#8B2020">行业大牌</span>
+    <h3 class="shop-name">源氏木语儿童家居旗舰店</h3>
+    <p class="shop-intro">源氏木语旗下儿童专线，实木儿童床、书桌、书架，品牌背书强，亲子家居内容契合度高。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 影子设计美学</span><span class="buyer-tag">🤝 洋气薇</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/67b44a6e6ce4da0015a25bfd" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/6191f18a000000001000b281" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="行业大牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#8B2020">行业大牌</span>
+    <h3 class="shop-name">爱依瑞斯家居旗舰店</h3>
+    <p class="shop-intro">知名软体家具品牌，专注布艺沙发、功能沙发，颜值在线，性价比高，适合客厅改造、家居好物内容方向的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0314dt4ntu62005o4gnha08l38kdbeiv0?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0314mvbcg1lu005o4gnha08l3809hq840?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0314mvcrfam2005o4gnha08l387403u90?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031o8o02rn4s005o4gnha08l38mtqhj3o?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31lad4vhd4u0g5o4gnha08l38rm4jlvg?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 一颗KK</span><span class="buyer-tag">🤝 和谐丶CC</span><span class="buyer-tag">🤝 酒酿泡芙</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/64910883f189f600017a423a" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/6090bc540000000001005468" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="新锐设计品牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#1a5c3a">新锐设计品牌</span>
+    <h3 class="shop-name">木邻家具旗舰店</h3>
+    <p class="shop-intro">原创设计实木品牌，主打樱桃木家具，中古风与北欧风融合，产品辨识度极高，内容种草能力强。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0317scii8hgm004a75r0fe41nn2ble3v8?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31th470tp560g4a75r0fe41nnrl1lit8?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 星光夜市</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/64ae6753fb86f50001ad69a9" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/5b4adee2e8ac2b703f9a06f7" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="新锐设计品牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#1a5c3a">新锐设计品牌</span>
+    <h3 class="shop-name">山隐造物旗舰店</h3>
+    <p class="shop-intro">专注原木禅意美学家居，产品气质沉静，调性高级，适合有东方生活方式内容基因的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/01027k01kiztb9cqnll0l0uy59p03d84lq?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/0302a901kiztb9cqnll2o0msz7s0lyerv6?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030ogvjp7g2c005ni0smd08efpkaj48oo?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031059g09mm2005ni0smd08efp4dhuujo?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o03119b0gqmmc005ni0smd08efpi5fe0e8?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 一枚小嘟嘟</span><span class="buyer-tag">🤝 星光夜市</span><span class="buyer-tag">🤝 谦妈育儿说🔅</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/62982ffcd6b436000195adea" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/5e40e59a00000000010039f9" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="行业大牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#8B2020">行业大牌</span>
+    <h3 class="shop-name">顾家家居旗舰店</h3>
+    <p class="shop-intro">顾家家居品牌旗舰店，沙发、床垫、衣柜全品类覆盖，大牌流量背书，活动节点带货效率高。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0320rtlii7lc005nbcogv08fk8lfgtlhg?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31kfe9o113q005nbcogv08fk8frog0hg?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no320tf9vfb6u0g5nbcogv08fk8gnv9l5o?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-none">暂无K播合作记录</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/6349362801ba120001862704" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/5d6cc43e0000000001003e88" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="新锐设计品牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#1a5c3a">新锐设计品牌</span>
+    <h3 class="shop-name">木纳家具的店</h3>
+    <p class="shop-intro">原创设计家具工作室，产品风格极简，黑胡桃木为主材，调性高级，适合有高品位家居内容方向的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030r21q20ahi004bg887snejbnob3iskg?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o030r229m75hi004bg887snejbn70vto20?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031hf05sb538004bg887snejbnbuo179g?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031ladmav4ks004bg887snejbnlpnnrk8?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31m5qgbq9ks0g4bg887snejbnsg4f170?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 圈圈卷不动</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/6271387798970c0001d215cd" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/5bc6f97738d8fa00011b4d77" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="山东实木品牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#6b3a22">山东实木品牌</span>
+    <h3 class="shop-name">青岛一木家具旗舰店</h3>
+    <p class="shop-intro">青岛实木家具品牌，主打橡木实木家具，工艺扎实，价格亲民，适合实用主义家居内容方向的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-none">暂无K播合作记录</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/69853f7765ae500015499806" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/690ac91d0000000032018dc4" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="行业大牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#8B2020">行业大牌</span>
+    <h3 class="shop-name">芝华仕旗舰店</h3>
+    <p class="shop-intro">头部功能沙发品牌，科技感强，功能沙发市占率领先，大牌影响力高，适合大流量带货合作。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031ogcd4uf4u005p6o86s0adr60dr4edg?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031rjfn0nr220g5p6o86s0adr6odvl9vo?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031t71l3ij56005p6o86s0adr6n51i67g?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031ub2q44rhm005p6o86s0adr65u2orv0?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31ovkhd6vh00g5p6o86s0adr6p7apgn0?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-none">暂无K播合作记录</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/64f57eea8265a10001b20b04" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/64d841b80000000001013766" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="行业大牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#8B2020">行业大牌</span>
+    <h3 class="shop-name">顾家家居儿童家具旗舰店</h3>
+    <p class="shop-intro">顾家旗下儿童家具专线，覆盖儿童床、书桌、书柜，品牌认知度高，适合亲子家居内容方向。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-tag">🤝 小红书最爱的小橙子🍊</span><span class="buyer-tag">🤝 中国竹竿</span><span class="buyer-tag">🤝 97颗草莓🍓</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/6603fe2fd0c925000161e7ef" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/64118775000000001102163d" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="行业大牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#8B2020">行业大牌</span>
+    <h3 class="shop-name">曲美家居旗舰店</h3>
+    <p class="shop-intro">曲美家居正店，北欧风格家居全品类，品牌历史悠久，产品线丰富，适合北欧家居内容方向的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0322a8cmljmu0046p8jq1r89sjbe49ogg?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o0322a9e24mn40g46p8jq1r89sj1ntiv28?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no3229984e1701046p8jq1r89sjsjhji8g?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no3229ag3avn20g46p8jq1r89sjulne7a8?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no3229ajcfrmu0g46p8jq1r89sjs6er29g?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-none">暂无K播合作记录</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/6620bf64821c840001b6d5ed" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/56dfc3b44775a736f5712793" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="国际大牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#1a3a5c">国际大牌</span>
+    <h3 class="shop-name">Stressless思特莱斯旗舰店</h3>
+    <p class="shop-intro">挪威顶级真皮功能椅国际品牌，超高客单价，极致工艺，适合奢品生活方式内容方向的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031tidqhgj5a0049ff9qjj1qf0699u6s0?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031tiekpfk580049ff9qjj1qf04ppssso?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031uug2seq1u0049ff9qjj1qf0c46l5jg?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31rq1qvmp280g49ff9qjj1qf0g967k38?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31rq2sqc7260g49ff9qjj1qf0t6kb1n8?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-none">暂无K播合作记录</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/662f34ac3bf50b00017d4d36" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/590d67306a6a6921bb10e9e0" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="新锐设计品牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#1a5c3a">新锐设计品牌</span>
+    <h3 class="shop-name">三山一舍旗舰店</h3>
+    <p class="shop-intro">新锐原创设计品牌，主打极简风格家居，用料考究，产品有收藏价值，适合有设计师生活方式内容基因的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031phphk9gjq005nia8m4g8qupvgia0u8?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031phr0ket3q005nia8m4g8qup1q1e3l0?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031phrdefi40005nia8m4g8qupfh6e9k8?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g0o031phrmdu63u005nia8m4g8quphsuu3ug?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div><div class="prod-card"><img class="prod-img" src="https://ci.xiaohongshu.com/arkgoods/1040g3no31phq1om63s0g5nia8m4g8qupcm7k9do?imageView2/2/w/400/format/jpg/q/80" loading="lazy" onerror="this.style.display='none'"></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-none">暂无K播合作记录</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/69255c1f57710c0015561ae6" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/5e4a45890000000001006bd9" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+<div class="merchant-card" data-tag="行业大牌">
+  <div class="card-header">
+    <span class="tag-badge" style="background:#8B2020">行业大牌</span>
+    <h3 class="shop-name">SLEEMON喜临门官方旗舰店</h3>
+    <p class="shop-intro">头部床垫品牌，科技睡眠概念领先，床垫、床架全品类，大牌背书，适合睡眠健康内容方向的买手。</p>
+  </div>
+  <div class="prod-section">
+    <div class="prod-label">🛍️ 精选货品</div>
+    <div class="prod-grid"><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div><div class="prod-card prod-placeholder"><svg viewBox="0 0 44 44" fill="none"><rect x="6" y="10" width="32" height="24" rx="3" stroke="#c4b5a8" stroke-width="2"/><circle cx="15" cy="19" r="3" stroke="#c4b5a8" stroke-width="2"/><path d="M6 28l8-6 6 5 6-4 12 9" stroke="#c4b5a8" stroke-width="2" stroke-linejoin="round"/></svg></div></div>
+  </div>
+  <div class="buyer-section">
+    <div class="buyer-label">📊 近180天K播合作买手</div>
+    <div class="buyer-tags"><span class="buyer-none">暂无K播合作记录</span></div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.xiaohongshu.com/shop/6989441068c5d50015d5d19c" target="_blank" class="btn btn-shop">进店选品</a>
+    <a href="https://www.xiaohongshu.com/user/profile/666959430000000003030d60" target="_blank" class="btn btn-account">账号主页</a>
+  </div>
+</div>
+</div>
 <script>
-const placeholderSVG = `<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="18" width="36" height="14" rx="4" fill="#d4c4b8"/><rect x="8" y="22" width="28" height="8" rx="2" fill="#e8ddd4"/><rect x="2" y="16" width="8" height="16" rx="3" fill="#c9b8a8"/><rect x="34" y="16" width="8" height="16" rx="3" fill="#c9b8a8"/><rect x="10" y="32" width="4" height="5" rx="1" fill="#b0a09a"/><rect x="30" y="32" width="4" height="5" rx="1" fill="#b0a09a"/></svg>`;
-
-const tagClass = {
-  "行业大牌": "tag-da",
-  "新锐设计品牌": "tag-xin",
-  "山东实木品牌": "tag-sd",
-  "国际大牌": "tag-int"
-};
-
-const tagLabel = {
-  "行业大牌": "行业大牌",
-  "新锐设计品牌": "新锐设计品牌",
-  "山东实木品牌": "山东实木品牌",
-  "国际大牌": "国际大牌"
-};
-
-const merchants = [
-  {
-    id: "69cdcdbf078527001583b8b9",
-    name: "管木匠家居旗舰店",
-    tag: "山东实木品牌",
-    intro: "山东潍坊实木家具工厂，专注榉木、橡木定制，以工厂直供价格提供高品质实木收纳柜、展示柜，工艺扎实，交期稳定，K播爆单能力强。",
-    shop_url: "https://www.xiaohongshu.com/shop/69cdcdbf078527001583b8b9",
-    account_url: "https://www.xiaohongshu.com/user/profile/69a63ee600000000240279cf"
-  },
-  {
-    id: "61c53887773004000124d1a4",
-    name: "源氏木语实木家居旗舰店",
-    tag: "行业大牌",
-    intro: "知名实木家居品牌，覆盖床、衣柜、餐桌等全品类，北欧简约风格，品牌认知度高，站内种草生态成熟，店播+K播双渠道稳健。",
-    shop_url: "https://www.xiaohongshu.com/shop/61c53887773004000124d1a4",
-    account_url: "https://www.xiaohongshu.com/user/profile/5aa5e37111be1001a6ae06e2"
-  },
-  {
-    id: "63aebd1057d3c20001418ec3",
-    name: "舒梵旗舰店",
-    tag: "新锐设计品牌",
-    intro: "原创设计家具品牌，擅长将工业风与东方美学融合，产品辨识度高，内容营销能力突出，爆款笔记转化力强，适合追求差异化选品的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/63aebd1057d3c20001418ec3",
-    account_url: "https://www.xiaohongshu.com/user/profile/5a956a2be8ac2b6db3610ff5"
-  },
-  {
-    id: "6480303839b63800015ad444",
-    name: "KUKa顾家家居旗舰店",
-    tag: "行业大牌",
-    intro: "顾家家居旗下沙发主力品牌，主打功能沙发、布艺沙发，大牌背书信任度高，促销活动丰富，适合大体量带货合作。",
-    shop_url: "https://www.xiaohongshu.com/shop/6480303839b63800015ad444",
-    account_url: "https://www.xiaohongshu.com/user/profile/61dba1b1000000001000b169"
-  },
-  {
-    id: "651138d4effd830001ca90b2",
-    name: "溪木工坊家居馆的店",
-    tag: "新锐设计品牌",
-    intro: "专注中古风实木家居，茶桌、罗汉床等东方生活美学产品，调性独特，粉丝粘性强，适合有生活美学内容方向的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/651138d4effd830001ca90b2",
-    account_url: "https://www.xiaohongshu.com/user/profile/64bb43af000000001403f599"
-  },
-  {
-    id: "6757fe6a353cbe0015e617f7",
-    name: "稍安木作的店",
-    tag: "山东实木品牌",
-    intro: "山东实木小众工坊，主打原木简约风，榉木、椿木选材考究，产品走量稳健，适合喜爱原木生活方式内容创作的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/6757fe6a353cbe0015e617f7",
-    account_url: "https://www.xiaohongshu.com/user/profile/666b9ff70000000003032d8f"
-  },
-  {
-    id: "622b128b66580100011e1ad2",
-    name: "IMG Comfort旗舰店",
-    tag: "国际大牌",
-    intro: "挪威功能沙发国际品牌，主打人体工学功能椅，客单价高，品质感强，适合高净值人群内容方向的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/622b128b66580100011e1ad2",
-    account_url: "https://www.xiaohongshu.com/user/profile/5d0c4821000000001603c613"
-  },
-  {
-    id: "680a172285f39f00152c4b65",
-    name: "休假木作MuZo的店",
-    tag: "山东实木品牌",
-    intro: "潍坊原木家具工坊，主打度假风实木家居，产品有设计感，内容调性轻松治愈，适合生活方式类买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/680a172285f39f00152c4b65",
-    account_url: "https://www.xiaohongshu.com/user/profile/66ece62a000000001d022d3f"
-  },
-  {
-    id: "64bf8c82421de40001754622",
-    name: "营造空间·搜罗万象家具的店",
-    tag: "新锐设计品牌",
-    intro: "聚焦进口二手家具及设计师款，选品独特，走高端小众路线，适合有海外或设计师品牌内容基因的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/64bf8c82421de40001754622",
-    account_url: "https://www.xiaohongshu.com/user/profile/627dee860000000021024455"
-  },
-  {
-    id: "684936e95a7cc60015a470a7",
-    name: "营造空间-飞行者的店",
-    tag: "新锐设计品牌",
-    intro: "营造空间旗下新店，主打设计感家具，产品风格与主店互补，适合探索家居设计新品内容方向的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/684936e95a7cc60015a470a7",
-    account_url: "https://www.xiaohongshu.com/user/profile/6268e04e0000000010009767"
-  },
-  {
-    id: "61e7c21fc16c8f0001edefd0",
-    name: "两刻实木家具的店",
-    tag: "山东实木品牌",
-    intro: "山东实木家具老牌品牌，专注白蜡木、橡木实木床及餐桌，工艺稳定，性价比突出，适合实木家居内容方向的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/61e7c21fc16c8f0001edefd0",
-    account_url: "https://www.xiaohongshu.com/user/profile/5754bf036a6a6949bcce4d50"
-  },
-  {
-    id: "657c27d100c6110001a6ed40",
-    name: "QUANU全友旗舰店",
-    tag: "行业大牌",
-    intro: "全国知名家居品牌，覆盖沙发、床、衣柜等全品类，大牌背书，线上线下同步，促销敏感度高，适合大流量带货合作。",
-    shop_url: "https://www.xiaohongshu.com/shop/657c27d100c6110001a6ed40",
-    account_url: "https://www.xiaohongshu.com/user/profile/625d5f0e000000001000e4f3"
-  },
-  {
-    id: "69a4e98bdfdd6c00155100a4",
-    name: "QMLAB曲美感官实验室的店",
-    tag: "行业大牌",
-    intro: "曲美旗下高端子品牌，融合北欧设计与东方美学，产品溢价能力强，适合有高品质生活内容方向的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/69a4e98bdfdd6c00155100a4",
-    account_url: "https://www.xiaohongshu.com/user/profile/5fa4da7a00000000010046de"
-  },
-  {
-    id: "63f5a9ebbb9ee90001437260",
-    name: "枝乐ZHILEKIDS的店",
-    tag: "新锐设计品牌",
-    intro: "专注儿童实木家具，颜值与安全并重，小众高端定位，口碑极佳，适合母婴或儿童成长内容方向的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/63f5a9ebbb9ee90001437260",
-    account_url: "https://www.xiaohongshu.com/user/profile/629469a40000000021024170"
-  },
-  {
-    id: "61d555bb2bf6530001fd5cde",
-    name: "愫墨旗舰店",
-    tag: "山东实木品牌",
-    intro: "山东实木工坊，主打新中式实木家居，茶台、书架等品类齐全，传统工艺与现代设计融合，适合新中式生活美学内容方向的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/61d555bb2bf6530001fd5cde",
-    account_url: "https://www.xiaohongshu.com/user/profile/5c25cb8c000000000701345e"
-  },
-  {
-    id: "67b44a6e6ce4da0015a25bfd",
-    name: "源氏木语儿童家居旗舰店",
-    tag: "行业大牌",
-    intro: "源氏木语旗下儿童专线，实木儿童床、书桌、书架，品牌背书强，亲子家居内容契合度高。",
-    shop_url: "https://www.xiaohongshu.com/shop/67b44a6e6ce4da0015a25bfd",
-    account_url: "https://www.xiaohongshu.com/user/profile/6191f18a000000001000b281"
-  },
-  {
-    id: "64910883f189f600017a423a",
-    name: "爱依瑞斯家居旗舰店",
-    tag: "行业大牌",
-    intro: "知名软体家具品牌，专注布艺沙发、功能沙发，颜值在线，性价比高，适合客厅改造、家居好物内容方向的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/64910883f189f600017a423a",
-    account_url: "https://www.xiaohongshu.com/user/profile/6090bc540000000001005468"
-  },
-  {
-    id: "64ae6753fb86f50001ad69a9",
-    name: "木邻家具旗舰店",
-    tag: "新锐设计品牌",
-    intro: "原创设计实木品牌，主打樱桃木家具，中古风与北欧风融合，产品辨识度极高，内容种草能力强。",
-    shop_url: "https://www.xiaohongshu.com/shop/64ae6753fb86f50001ad69a9",
-    account_url: "https://www.xiaohongshu.com/user/profile/5b4adee2e8ac2b703f9a06f7"
-  },
-  {
-    id: "62982ffcd6b436000195adea",
-    name: "山隐造物旗舰店",
-    tag: "新锐设计品牌",
-    intro: "专注原木禅意美学家居，产品气质沉静，调性高级，适合有东方生活方式内容基因的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/62982ffcd6b436000195adea",
-    account_url: "https://www.xiaohongshu.com/user/profile/5e40e59a00000000010039f9"
-  },
-  {
-    id: "6349362801ba120001862704",
-    name: "顾家家居旗舰店",
-    tag: "行业大牌",
-    intro: "顾家家居品牌旗舰店，沙发、床垫、衣柜全品类覆盖，大牌流量背书，活动节点带货效率高。",
-    shop_url: "https://www.xiaohongshu.com/shop/6349362801ba120001862704",
-    account_url: "https://www.xiaohongshu.com/user/profile/5d6cc43e0000000001003e88"
-  },
-  {
-    id: "6271387798970c0001d215cd",
-    name: "木纳家具的店",
-    tag: "新锐设计品牌",
-    intro: "原创设计家具工作室，产品风格极简，黑胡桃木为主材，调性高级，适合有高品位家居内容方向的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/6271387798970c0001d215cd",
-    account_url: "https://www.xiaohongshu.com/user/profile/5bc6f97738d8fa00011b4d77"
-  },
-  {
-    id: "69853f7765ae500015499806",
-    name: "青岛一木家具旗舰店",
-    tag: "山东实木品牌",
-    intro: "青岛实木家具品牌，主打橡木实木家具，工艺扎实，价格亲民，适合实用主义家居内容方向的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/69853f7765ae500015499806",
-    account_url: "https://www.xiaohongshu.com/user/profile/690ac91d0000000032018dc4"
-  },
-  {
-    id: "64f57eea8265a10001b20b04",
-    name: "芝华仕旗舰店",
-    tag: "行业大牌",
-    intro: "头部功能沙发品牌，科技感强，功能沙发市占率领先，大牌影响力高，适合大流量带货合作。",
-    shop_url: "https://www.xiaohongshu.com/shop/64f57eea8265a10001b20b04",
-    account_url: "https://www.xiaohongshu.com/user/profile/64d841b80000000001013766"
-  },
-  {
-    id: "6603fe2fd0c925000161e7ef",
-    name: "顾家家居儿童家具旗舰店",
-    tag: "行业大牌",
-    intro: "顾家旗下儿童家具专线，覆盖儿童床、书桌、书柜，品牌认知度高，适合亲子家居内容方向。",
-    shop_url: "https://www.xiaohongshu.com/shop/6603fe2fd0c925000161e7ef",
-    account_url: "https://www.xiaohongshu.com/user/profile/64118775000000001102163d"
-  },
-  {
-    id: "6620bf64821c840001b6d5ed",
-    name: "曲美家居旗舰店",
-    tag: "行业大牌",
-    intro: "曲美家居正店，北欧风格家居全品类，品牌历史悠久，产品线丰富，适合北欧家居内容方向的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/6620bf64821c840001b6d5ed",
-    account_url: "https://www.xiaohongshu.com/user/profile/56dfc3b44775a736f5712793"
-  },
-  {
-    id: "662f34ac3bf50b00017d4d36",
-    name: "Stressless思特莱斯旗舰店",
-    tag: "国际大牌",
-    intro: "挪威顶级真皮功能椅国际品牌，超高客单价，极致工艺，适合奢品生活方式内容方向的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/662f34ac3bf50b00017d4d36",
-    account_url: "https://www.xiaohongshu.com/user/profile/590d67306a6a6921bb10e9e0"
-  },
-  {
-    id: "69255c1f57710c0015561ae6",
-    name: "三山一舍旗舰店",
-    tag: "新锐设计品牌",
-    intro: "新锐原创设计品牌，主打极简风格家居，用料考究，产品有收藏价值，适合有设计师生活方式内容基因的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/69255c1f57710c0015561ae6",
-    account_url: "https://www.xiaohongshu.com/user/profile/5e4a45890000000001006bd9"
-  },
-  {
-    id: "6989441068c5d50015d5d19c",
-    name: "SLEEMON喜临门官方旗舰店",
-    tag: "行业大牌",
-    intro: "头部床垫品牌，科技睡眠概念领先，床垫、床架全品类，大牌背书，适合睡眠健康内容方向的买手。",
-    shop_url: "https://www.xiaohongshu.com/shop/6989441068c5d50015d5d19c",
-    account_url: "https://www.xiaohongshu.com/user/profile/666959430000000003030d60"
-  }
-];
-
-const buyerTop3 = {
-  "63aebd1057d3c20001418ec3": ["一颗KK","甜丧小老徐","野柿子小姐"],
-  "61c53887773004000124d1a4": ["一颗KK","有样美学","Joy张宇宙"],
-  "69cdcdbf078527001583b8b9": ["开心的管老板","管木匠木作工厂"],
-  "6757fe6a353cbe0015e617f7": ["开心的管老板","萌芽小幸福","yoyookok"],
-  "622b128b66580100011e1ad2": ["章小蕙","Joy张宇宙","玫瑰是玫瑰"],
-  "64910883f189f600017a423a": ["一颗KK","和谐丶CC","酒酿泡芙"],
-  "6480303839b63800015ad444": ["绝世小土豆","阿朱的世界（软装ing）🛒","饱_饱"],
-  "651138d4effd830001ca90b2": ["一颗KK","玩茶人","星光夜市"],
-  "61d555bb2bf6530001fd5cde": ["一颗KK","听听月亮","幸福感小物"],
-  "680a172285f39f00152c4b65": ["Gemini邱邱","子禾家🏠","昕昕cici"],
-  "61e7c21fc16c8f0001edefd0": ["铭仔麻麻","宸仔没烦恼","秋秋"],
-  "69a4e98bdfdd6c00155100a4": ["泽龙Z","灰灰灰太狼","开心的管老板"],
-  "62982ffcd6b436000195adea": ["一枚小嘟嘟","星光夜市","谦妈育儿说🔅"],
-  "63f5a9ebbb9ee90001437260": ["墨汐康康","喜乐吖～","嘉不加一📷"],
-  "67b44a6e6ce4da0015a25bfd": ["影子设计美学","洋气薇"],
-  "64bf8c82421de40001754622": ["小家大冒险","野柿子小姐","星光夜市"],
-  "6603fe2fd0c925000161e7ef": ["小红书最爱的小橙子🍊","中国竹竿","97颗草莓🍓"],
-  "6271387798970c0001d215cd": ["圈圈卷不动"],
-  "64ae6753fb86f50001ad69a9": ["星光夜市"]
-};
-
-const shopProducts = {
-  "69cdcdbf078527001583b8b9": ["https://ci.xiaohongshu.com/arkgoods/1040g0o0320n136jm5i005qd67rj94ueff6ih750?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0320pitrdomo005qd67rj94uef769760o?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0321i1ggdv72005qd67rj94uefvbfvg2o?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0322skrsctn00g5qd67rj94uefcc71kmo?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31vvvlqmkis0g5qd67rj94uefifbenhg?imageView2/2/w/400/format/jpg/q/80"],
-  "61c53887773004000124d1a4": ["https://ci.xiaohongshu.com/arkgoods/1040g0o0315a2ot4ags004a39dehn21n2g3oo5ug?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031rbornmlmu004a39dehn21n23g6os58?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031rbpmrt8n4004a39dehn21n294hogio?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031tjinufmmq004a39dehn21n22t399f8?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031ugc2pi6hu004a39dehn21n2btf734o?imageView2/2/w/400/format/jpg/q/80"],
-  "63aebd1057d3c20001418ec3": ["https://ci.xiaohongshu.com/arkgoods/1040g0o030mud0t6dki004a2spdl2m3vlqml9va0?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o030s8kekl72k004a2spdl2m3vlradu7fo?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o030s9k8i6vii004a2spdl2m3vl18ot4q0?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o030shd33q5ja004a2spdl2m3vlf1tvjr8?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o030shddt36je004a2spdl2m3vldjh77hg?imageView2/2/w/400/format/jpg/q/80"],
-  "6480303839b63800015ad444": ["https://ci.xiaohongshu.com/arkgoods/1040g0o030osgahpj3m005oerk6ok1cb9t99e7e0?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0310q1pu3amc005oerk6ok1cb9k2fqd3g?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o03136337cihe005oerk6ok1cb90luvb00?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031mk1j4ke52005oerk6ok1cb9g2toejg?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31mk03td54u0g5oerk6ok1cb9rp4fb4o?imageView2/2/w/400/format/jpg/q/80"],
-  "651138d4effd830001ca90b2": ["https://ci.xiaohongshu.com/arkgoods/1040g0o030poop9ohmm005p5r8enl7tcpsadpjq8?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o030prf8i6g6q005p5r8enl7tcpk1q9e10?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o030ps9trg9mk005p5r8enl7tcpjn95id0?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o030psjv98vmu005p5r8enl7tcpa803aho?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o030psnoacomm005p5r8enl7tcp5sd48t8?imageView2/2/w/400/format/jpg/q/80"],
-  "6757fe6a353cbe0015e617f7": ["https://ci.xiaohongshu.com/arkgoods/1040g0o031sbt0v4q5c0g5pjbjvrgubcfjka2h38?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031sfvrj7h5a705pjbjvrgubcful56ms0?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0321ulj6qhn2005pjbjvrgubcfk600u20?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31hlmdce6j80g5pjbjvrgubcf6g5tst8?imageView2/2/w/400/format/jpg/q/80"],
-  "622b128b66580100011e1ad2": ["https://ci.xiaohongshu.com/arkgoods/1040g0o0320ectj95li005n8c90glnhgjvpp12q0?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0320ecvqep5e005n8c90glnhgjn0puuko?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0320ed23mu5e005n8c90glnhgjepo6f5o?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0320ed3efv5c005n8c90glnhgjgqqje30?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0320ed3smf5e005n8c90glnhgj0ufltbo?imageView2/2/w/400/format/jpg/q/80"],
-  "680a172285f39f00152c4b65": ["https://ci.xiaohongshu.com/arkgoods/1040g0o031gmmgo9834005pncsol7cb9vshdvhno?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031gnutbnf423g5pncsol7cb9vckbv3o0?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031go1qc8b38005pncsol7cb9v56dhsq0?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031go4becija005pncsol7cb9vsdncr4o?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031i1f9c5r6k005pncsol7cb9vjjp1b0g?imageView2/2/w/400/format/jpg/q/80"],
-  "64bf8c82421de40001754622": ["https://ci.xiaohongshu.com/arkgoods/1040g0o0317dago4v3k005ojttq38ch2l91aoreo?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0317egchc73k005ojttq38ch2l47q8r1o?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031cbl7mqgge005ojttq38ch2l3pk9oh8?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031cbn2c4g08005ojttq38ch2lqsojo3g?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031cduu0ot08005ojttq38ch2lt0nif08?imageView2/2/w/400/format/jpg/q/80"],
-  "684936e95a7cc60015a470a7": ["https://ci.xiaohongshu.com/arkgoods/1040g0o031q9bm3la70005oj8s17415r7793psig?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031tt1p0vr0s1g5oj8s17415r7s0qa28o?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31kopuq43480g5oj8s17415r7g2ja75g?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31ksdq1djjq0g5oj8s17415r7t6s9g68?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31rhutnd21e0g5oj8s17415r7c1kudoo?imageView2/2/w/400/format/jpg/q/80"],
-  "61e7c21fc16c8f0001edefd0": ["https://ci.xiaohongshu.com/arkgoods/1000g0o02neaaqusji00048e6j0vg6jagv2fgg0g?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0310bj677bmk0048e6j0vg6jagqur4nsg?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0312nsfmvh1m0048e6j0vg6jagshj2v58?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0316dvv09m0o0048e6j0vg6jagebe55v0?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031kj7keu7j60048e6j0vg6jagboj971o?imageView2/2/w/400/format/jpg/q/80"],
-  "657c27d100c6110001a6ed40": ["https://ci.xiaohongshu.com/arkgoods/1040g0o031hqn4gm438005oitbs741p7jrft9eq8?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031lv1kbvrkq005oitbs741p7j6jss518?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31krbja4j360g5oitbs741p7jmgopl90?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31l6u6fnil20g5oitbs741p7jg2hl8i0?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31q96d4i9n20g5oitbs741p7j4n11cuo?imageView2/2/w/400/format/jpg/q/80"],
-  "69a4e98bdfdd6c00155100a4": ["https://ci.xiaohongshu.com/arkgoods/1040g3no31u1s7gi71a0g5nt4r9t08hmum43kmv8?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no321906uu9n40g5nt4r9t08hmu53ikubo?imageView2/2/w/400/format/jpg/q/80"],
-  "63f5a9ebbb9ee90001437260": ["https://ci.xiaohongshu.com/arkgoods/1040g0o030pr3se1t6q005okkd6i8cgbg1ho45vg?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o030rrflat1is005okkd6i8cgbg5okd0po?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o030s70e9sbim005okkd6i8cgbg1do7aqg?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0315cvo04o0m005okkd6i8cgbgi8o6pmo?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031h0sbo4h3a005okkd6i8cgbgh0bui88?imageView2/2/w/400/format/jpg/q/80"],
-  "61d555bb2bf6530001fd5cde": ["https://ci.xiaohongshu.com/arkgoods/1000g0o02hq6k27eim0005n15pe61qd2uc9156gg?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1000g0o02nf610kgji0005n15pe61qd2u69m3q58?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o030pu07jn06k005n15pe61qd2us7fn3rg?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031ju2kbkj2a005n15pe61qd2urub8368?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031k06fbdv2g005n15pe61qd2ug33s0jg?imageView2/2/w/400/format/jpg/q/80"],
-  "67b44a6e6ce4da0015a25bfd": [],
-  "64910883f189f600017a423a": ["https://ci.xiaohongshu.com/arkgoods/1040g0o0314dt4ntu62005o4gnha08l38kdbeiv0?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0314mvbcg1lu005o4gnha08l3809hq840?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0314mvcrfam2005o4gnha08l387403u90?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031o8o02rn4s005o4gnha08l38mtqhj3o?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31lad4vhd4u0g5o4gnha08l38rm4jlvg?imageView2/2/w/400/format/jpg/q/80"],
-  "64ae6753fb86f50001ad69a9": ["https://ci.xiaohongshu.com/arkgoods/1040g0o0317scii8hgm004a75r0fe41nn2ble3v8?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31th470tp560g4a75r0fe41nnrl1lit8?imageView2/2/w/400/format/jpg/q/80"],
-  "62982ffcd6b436000195adea": ["https://ci.xiaohongshu.com/arkgoods/01027k01kiztb9cqnll0l0uy59p03d84lq?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/0302a901kiztb9cqnll2o0msz7s0lyerv6?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o030ogvjp7g2c005ni0smd08efpkaj48oo?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031059g09mm2005ni0smd08efp4dhuujo?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o03119b0gqmmc005ni0smd08efpi5fe0e8?imageView2/2/w/400/format/jpg/q/80"],
-  "6349362801ba120001862704": ["https://ci.xiaohongshu.com/arkgoods/1040g0o0320rtlii7lc005nbcogv08fk8lfgtlhg?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31kfe9o113q005nbcogv08fk8frog0hg?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no320tf9vfb6u0g5nbcogv08fk8gnv9l5o?imageView2/2/w/400/format/jpg/q/80"],
-  "6271387798970c0001d215cd": ["https://ci.xiaohongshu.com/arkgoods/1040g0o030r21q20ahi004bg887snejbnob3iskg?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o030r229m75hi004bg887snejbn70vto20?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031hf05sb538004bg887snejbnbuo179g?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031ladmav4ks004bg887snejbnlpnnrk8?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31m5qgbq9ks0g4bg887snejbnsg4f170?imageView2/2/w/400/format/jpg/q/80"],
-  "69853f7765ae500015499806": [],
-  "64f57eea8265a10001b20b04": ["https://ci.xiaohongshu.com/arkgoods/1040g0o031ogcd4uf4u005p6o86s0adr60dr4edg?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031rjfn0nr220g5p6o86s0adr6odvl9vo?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031t71l3ij56005p6o86s0adr6n51i67g?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031ub2q44rhm005p6o86s0adr65u2orv0?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31ovkhd6vh00g5p6o86s0adr6p7apgn0?imageView2/2/w/400/format/jpg/q/80"],
-  "6603fe2fd0c925000161e7ef": [],
-  "6620bf64821c840001b6d5ed": ["https://ci.xiaohongshu.com/arkgoods/1040g0o0322a8cmljmu0046p8jq1r89sjbe49ogg?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o0322a9e24mn40g46p8jq1r89sj1ntiv28?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no3229984e1701046p8jq1r89sjsjhji8g?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no3229ag3avn20g46p8jq1r89sjulne7a8?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no3229ajcfrmu0g46p8jq1r89sjs6er29g?imageView2/2/w/400/format/jpg/q/80"],
-  "662f34ac3bf50b00017d4d36": ["https://ci.xiaohongshu.com/arkgoods/1040g0o031tidqhgj5a0049ff9qjj1qf0699u6s0?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031tiekpfk580049ff9qjj1qf04ppssso?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031uug2seq1u0049ff9qjj1qf0c46l5jg?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31rq1qvmp280g49ff9qjj1qf0g967k38?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31rq2sqc7260g49ff9qjj1qf0t6kb1n8?imageView2/2/w/400/format/jpg/q/80"],
-  "69255c1f57710c0015561ae6": ["https://ci.xiaohongshu.com/arkgoods/1040g0o031phphk9gjq005nia8m4g8qupvgia0u8?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031phr0ket3q005nia8m4g8qup1q1e3l0?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031phrdefi40005nia8m4g8qupfh6e9k8?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g0o031phrmdu63u005nia8m4g8quphsuu3ug?imageView2/2/w/400/format/jpg/q/80","https://ci.xiaohongshu.com/arkgoods/1040g3no31phq1om63s0g5nia8m4g8qupcm7k9do?imageView2/2/w/400/format/jpg/q/80"],
-  "6989441068c5d50015d5d19c": []
-};
-
-function buildProductsHTML(id) {
-  const imgs = shopProducts[id] || [];
-  if (imgs.length === 0) {
-    // Show 5 placeholders
-    let html = '';
-    for (let i = 0; i < 5; i++) {
-      html += `<div class="prod-card"><div class="prod-placeholder">${placeholderSVG}</div></div>`;
-    }
-    return html;
-  }
-  // Show up to 5, pad with placeholders
-  let html = '';
-  for (let i = 0; i < 5; i++) {
-    if (i < imgs.length) {
-      html += `<div class="prod-card"><img class="prod-img" src="${imgs[i]}" loading="lazy" onerror="this.parentNode.innerHTML='<div class=prod-placeholder>${placeholderSVG.replace(/`/g,"")}</div>'"></div>`;
-    } else {
-      html += `<div class="prod-card"><div class="prod-placeholder">${placeholderSVG}</div></div>`;
-    }
-  }
-  return html;
-}
-
-function buildBuyersHTML(id) {
-  const buyers = buyerTop3[id];
-  if (!buyers || buyers.length === 0) {
-    return `<span class="no-buyer">暂无K播合作记录</span>`;
-  }
-  return buyers.map(b => `<span class="buyer-tag">${b}</span>`).join('');
-}
-
-function buildCard(m) {
-  const tc = tagClass[m.tag] || 'tag-da';
-  const tl = tagLabel[m.tag] || m.tag;
-  const productsHTML = buildProductsHTML(m.id);
-  const buyersHTML = buildBuyersHTML(m.id);
-  return `
-<div class="card" data-tag="${m.tag}">
-  <div class="card-top">
-    <span class="tag ${tc}">${tl}</span>
-    <div class="brand-name">${m.name}</div>
-    <div class="intro">${m.intro}</div>
-  </div>
-  <div class="products-title">🛍 精选货品</div>
-  <div class="products-scroll">${productsHTML}</div>
-  <div class="buyers-wrap">
-    <div class="buyers-title">🤝 近180天K播合作买手</div>
-    <div class="buyers-list">${buyersHTML}</div>
-  </div>
-  <div class="card-btns">
-    <a href="${m.shop_url}" target="_blank" class="btn btn-solid">进店选品</a>
-    <a href="${m.account_url}" target="_blank" class="btn">账号主页</a>
-  </div>
-</div>`;
-}
-
-const grid = document.getElementById('grid');
-merchants.forEach(m => {
-  grid.innerHTML += buildCard(m);
-});
-
-// Filter
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.filter;
-    document.querySelectorAll('.card').forEach(card => {
-      if (f === 'all' || card.dataset.tag === f) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
-    });
+function filter(tag) {
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.merchant-card').forEach(c=>{
+    c.style.display = (tag==='全部'||c.dataset.tag===tag) ? '' : 'none';
   });
-});
+}
 </script>
 </body>
 </html>
